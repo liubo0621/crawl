@@ -31,6 +31,8 @@ class Collector(threading.Thread, Singleton):
 		self._threadStop = False
 
 	def __inputData(self):
+		if len(self._urls) > int(tools.getConfValue("collector", "max_size")):
+			return
 		mylock.acquire() #加锁
 
 		db = tools.connectDB()
