@@ -4,22 +4,23 @@ sys.path.append("..")
 
 import threading  
 import time
-# from collections import deque
 
 import utils.tools as tools
 
 mylock = threading.RLock()
 
-# queue.append("Terry") 
-# queue.popleft()
+class Singleton(object):
+    def __new__(cls,*args,**kwargs):
+        if not hasattr(cls,'_inst'):
+            cls._inst=super(Singleton,cls).__new__(cls,*args,**kwargs)
+        return cls._inst
 
-urls = []
-
-class Collector(threading.Thread):
+class Collector(threading.Thread, Singleton):
 	def __init__(self):
 		super(Collector, self).__init__()
 		self._interval = int(tools.getConfValue("collector", "sleep_time"))
 		self._threadStop = False
+		self._urls = []
 
 	def run(self):
 		while not self._threadStop:
@@ -41,21 +42,20 @@ class Collector(threading.Thread):
 		else:
 			urlsList = db.urls.find({"status":0, "site":site, "deep":{"$lte":deep}},{"url":1, "_id":0,"deep":1, "site":1}).sort([("deep",1)]).limit(urlCount)
 
-		global urls
-		urls.extend(urlsList)
+		self._urls.extend(urlsList)
 
 		mylock.release()
 			
 
-def getUrls(count):
+	def getUrls(self, count):
 		mylock.acquire() #加锁
 		
-		urls_ = urls[:count]
-		del urls[:count]
+		urls = self._urls[:count]
+		del self._urls[:count]
 		
 		mylock.release()
 
-		return urls_
+		return urls
 		
 
 	

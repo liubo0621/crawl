@@ -14,6 +14,7 @@ if __name__ == '__main__':
 	tools.connectDB()
 
 	coll = Collector()
+	coll2 = Collector()
 	coll.start()
 
 	paser = PaserControl()
