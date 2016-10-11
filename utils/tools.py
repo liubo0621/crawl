@@ -1,20 +1,19 @@
+# encoding=utf8
 import urllib
 import socket
 import re
-import pymongo #使用pip安装
+import pymongo
+import configparser #璇婚厤缃枃浠剁殑
 from urllib.parse import quote
 from urllib.error import URLError,HTTPError
 from builtins import UnicodeDecodeError
 from pymongo.collection import Collection
 
 
-client = pymongo.MongoClient("localhost",27017)
-db = client.iqiyi_struts
-
 def getHtml(url):
     try:
-        page = urllib.request.urlopen(quote(url,safe='/:?='))#获取网页page
-        html = page.read().decode('utf-8','ignore')#读取页面代码
+        page = urllib.request.urlopen(quote(url,safe='/:?='))
+        html = page.read().decode('utf-8','ignore')
         page.close()
     except HTTPError as e:
         print(e.code)
@@ -34,8 +33,6 @@ def getUrls(htmls):
     urls = re.compile('<a.*?\"(http:.+?)\".*?<\/a>').findall(str(htmls))
     return urls
 
-#参数2为网址标识，如iqiyi.com
-#返回url过滤后的新列表
 def fitUrl(urls, identi):
     usus = []
     for link in urls:
@@ -48,8 +45,27 @@ def getInfo(htmls,regular):
     info = '.'.join(info)
     return info
 
-def dbSave(collections,dictInfo):
-    db.collections.save(dictInfo)
+##################################################
+def getConfValue(section, key):
+    cf = configparser.ConfigParser()
+    cf.read("../crawl.conf")
+    return cf.get(section, key)
 
-def dbUpdata(collections,dictInfo,newdictInfo):
-    db.collections.update(dictInfo,{'$set':newdictInfo})
+##################################################
+db = None
+def connectDB():
+    global db
+    if db == None:
+        print("----")
+        client = pymongo.MongoClient("localhost",27017)
+        db = client.crawl
+    return db
+
+def dbSave(collection,dictInfo):
+    db.getCollection(collection).save(dictInfo)
+
+def dbUpdata(collection,dictInfo,newdictInfo):
+    db.getCollection(collection).update(dictInfo,{'$set':newdictInfo})
+
+def dbFind(collection,condition):
+    return db.getCollection(collection).find(condition)
