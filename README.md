@@ -25,3 +25,12 @@
 |release_time||||发布时间|
 |cyclopedia_msg||||百度百科上的信息|
 |web_name||||网站名|
+
+爬取的url表 `urls`
+
+| 字段名              | 数据类型| 长度 | 说明       | 描述 |
+|:-------------------|:-------|:----|:----------|:----|
+|url||||网址|
+|depth||||层级|
+|status||||状态（todo, doing, done, exception）|
+|site||||网址分类（如iqiyi，tencent）|

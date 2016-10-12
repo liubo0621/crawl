@@ -8,17 +8,16 @@ from base.collector import Collector
 from html_parser.parser_control import PaserControl
 
 def init():
-	pass
+    pass
 
 if __name__ == '__main__':
-	tools.connectDB()
+    tools.connectDB()
 
-	coll = Collector()
-	coll2 = Collector()
-	coll.start()
+    coll = Collector()
+    coll.start()
 
-	paser = PaserControl()
-	paser.start()
-
-	paser2 = PaserControl()
-	paser2.start()
+    paserCount = int(tools.getConfValue("html_parser", "parser_count"))
+    while paserCount:
+       paser = PaserControl()
+       paser.start()
+       paserCount = paserCount - 1
