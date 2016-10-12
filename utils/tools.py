@@ -56,7 +56,6 @@ db = None
 def connectDB():
     global db
     if db == None:
-        print("----")
         client = pymongo.MongoClient("localhost",27017)
         db = client.crawl
     return db
