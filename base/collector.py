@@ -4,6 +4,7 @@ sys.path.append("..")
 
 import threading
 import time
+import base.constance as Constance
 
 import utils.tools as tools
 
@@ -40,9 +41,9 @@ class Collector(threading.Thread, Singleton):
         depth = int(tools.getConfValue("collector", "depth"))
         urlCount = int(tools.getConfValue("collector", "url_count"))
         if site == 'all':
-            urlsList = db.urls.find({"status":0, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
+            urlsList = db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
         else:
-            urlsList = db.urls.find({"status":0, "site":site, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)
+            urlsList = db.urls.find({"status":Constance.TODO, "site":site, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)
 
         self._urls.extend(urlsList)
 
