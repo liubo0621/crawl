@@ -23,9 +23,6 @@ def parseDepth0(url):
     html = tools.getHtml(url)
     # html = '<a href= "http://v.youku.com/v_show/id_XMzc4NDM3MjUy.html"/>'
     urls = tools.getUrls(html)
-
-    videoUrl = tools.fitUrl(urls, 'https://v.youku.com/v_show/')
-
     for url in videoUrl:
         print(url)
 

@@ -16,23 +16,21 @@ class AddRootUrl(threading.Thread):
     def run(self):
         self.addYoukuUrl()
 
-
-    def addUrl(self, url, site, depth = 0, status = Constance.TODO):
-        urlDict = {'url':url, 'site':site, 'depth':depth, 'status':status}
-
+    def addUrl(self, url, websiteId, depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
             return
 
-        print(urlDict)
+        urlDict = {'url':url, 'website_id':websiteId, 'depth':depth, 'status':status}
         db.urls.save(urlDict)
 
     def addYoukuUrl(self):
         baseUrl = 'http://list.youku.com/category/show/c_84_s_1_d_1_p_%d.html'
         pageCount = 30
+        websiteId = tools.getWebsiteId(Constance.YOUKU)
 
         for i in range(1, pageCount + 1):
             url = 'http://list.youku.com/category/show/c_84_s_1_d_1_p_%d.html'%i
             # log.debug("youku base url = %s"%url)
-            self.addUrl(url, Constance.YOUKU)
+            self.addUrl(url, websiteId)
 
 

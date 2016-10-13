@@ -9,6 +9,8 @@ import base.constance as Constance
 from html_parser.parsers import *
 from base.collector import Collector
 
+db = tools.connectDB()
+
 class  PaserControl(threading.Thread):
     def __init__(self):
         super(PaserControl, self).__init__()
@@ -25,6 +27,10 @@ class  PaserControl(threading.Thread):
             time.sleep(self._interval)
 
     def parseUrl(self, urlInfo):
-        if urlInfo['site'] == Constance.YOUKU:
+        website_id = urlInfo['website_id']
+
+        domain = list(db.website.find({'_id':website_id}))[0]['domain']
+
+        if domain == Constance.YOUKU:
             youku.parseUrl(urlInfo)
 

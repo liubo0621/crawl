@@ -68,3 +68,15 @@ def dbUpdata(collection,dictInfo,newdictInfo):
 
 def dbFind(collection,condition):
     return db.getCollection(collection).find(condition)
+
+
+##################################################
+def getWebsiteId(domain):
+    website = list(db.website.find({'domain':domain}))
+    websiteId = None
+    if len(website) > 0:
+        websiteId = website[0]['_id']
+    else:
+        log.warning('website表中无%s信息，需先手动添加'%domain)
+
+    return websiteId

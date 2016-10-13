@@ -42,13 +42,14 @@ class Collector(threading.Thread, Singleton):
             return
         mylock.acquire() #加锁
 
-        site = tools.getConfValue("collector", "site")
+        website = tools.getConfValue("collector", "website")
         depth = int(tools.getConfValue("collector", "depth"))
         urlCount = int(tools.getConfValue("collector", "url_count"))
-        if site == 'all':
-            urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
+        if website == 'all':
+            urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
         else:
-            urlsList = Collector._db.urls.find({"status":Constance.TODO, "site":site, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "site":1}).sort([("depth",1)]).limit(urlCount)
+            websiteId = tools.getWebsiteId(Constance.YOUKU)
+            urlsList = Collector._db.urls.find({"status":Constance.TODO, "website_id":websiteId, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
 
         Collector._urls.extend(urlsList)
 
