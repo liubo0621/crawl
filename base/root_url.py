@@ -23,6 +23,7 @@ class AddRootUrl(threading.Thread):
         for i in db.urls.find({'url':url}):
             return
 
+        print(urlDict)
         db.urls.save(urlDict)
 
     def addYoukuUrl(self):

@@ -52,12 +52,12 @@ def getConfValue(section, key):
     return cf.get(section, key)
 
 ##################################################
-db = None
+class DB():
+    client = pymongo.MongoClient("localhost",27017)
+    db = client.crawl
+
+db = DB.db
 def connectDB():
-    global db
-    if db == None:
-        client = pymongo.MongoClient("localhost",27017)
-        db = client.crawl
     return db
 
 def dbSave(collection,dictInfo):

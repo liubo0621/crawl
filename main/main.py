@@ -15,11 +15,12 @@ def init():
 if __name__ == '__main__':
     log.info("--------begin--------")
 
+    addRootUrl = AddRootUrl()
+    addRootUrl.start()
+
     coll = Collector()
     coll.start()
 
-    addRootUrl = AddRootUrl()
-    addRootUrl.start()
 
     paserCount = int(tools.getConfValue("html_parser", "parser_count"))
     while paserCount:
