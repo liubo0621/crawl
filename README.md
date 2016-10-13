@@ -7,10 +7,18 @@
 
 | 字段名              | 数据类型| 长度 | 说明       | 描述 |
 |:-------------------|:-------|:----|:----------|:----|
+|website_id|||| 网站id |
 |web_name| | | | 网站名|
-|domain| || | 域名 |
+|domain|||| 域名 |
 |part_num||||总纪录片部数|
 |episode_num||||总纪录片集数|
+
+类型表 `regular_type`
+
+| 字段名              | 数据类型| 长度 | 说明       | 描述 |
+|:-------------------|:-------|:----|:----------|:----|
+|type_id||||id|
+|type||||正则所属类型|
 
 纪录片表 `documentary`
 
@@ -24,7 +32,7 @@
 |institutions||||播出机构|
 |release_time||||发布时间|
 |cyclopedia_msg||||百度百科上的信息|
-|web_name||||网站名|
+|website_id||||网站id|
 
 爬取的url表 `urls`
 
@@ -32,5 +40,14 @@
 |:-------------------|:-------|:----|:----------|:----|
 |url||||网址|
 |depth||||层级|
-|status||||状态（todo, doing, done, exception）|
-|site||||网址分类（如iqiyi，tencent）|
+|status||||状态（0 todo, 1 doing, 2 done, 3 exception）|
+|website_id||||网站id|
+
+正则表 `regular`
+
+| 字段名              | 数据类型| 长度 | 说明       | 描述 |
+|:-------------------|:-------|:----|:----------|:----|
+|website_id||||网站id|
+|type_id|||| 类型id|
+|regular|||| 正则 |
+

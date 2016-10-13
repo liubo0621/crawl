@@ -21,7 +21,6 @@ if __name__ == '__main__':
     coll = Collector()
     coll.start()
 
-
     paserCount = int(tools.getConfValue("html_parser", "parser_count"))
     while paserCount:
        paser = PaserControl()

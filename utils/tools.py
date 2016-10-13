@@ -1,5 +1,5 @@
 # encoding=utf8
-import urllib
+from urllib import request
 import socket
 import re
 import pymongo
@@ -12,7 +12,7 @@ from pymongo.collection import Collection
 
 def getHtml(url):
     try:
-        page = urllib.request.urlopen(quote(url,safe='/:?='))
+        page = request.urlopen(quote(url,safe='/:?='))
         html = page.read().decode('utf-8','ignore')
         page.close()
     except HTTPError as e:
@@ -29,8 +29,8 @@ def getHtml(url):
         return 0
     return html
 
-def getUrls(htmls):
-    urls = re.compile('<a.*?\"(http:.+?)\".*?<\/a>').findall(str(htmls))
+def getUrls(html):
+    urls = re.compile('<a.*?\"([http:|https:].+?)\"').findall(str(html))
     return urls
 
 def fitUrl(urls, identi):

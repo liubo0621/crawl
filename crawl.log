@@ -1,2 +1,2 @@
-7384 MainThread 2016-Oct-13 12:06:28 main.py <module> [line:16] INFO --------begin--------
-20744 Thread-3 2016-Oct-13 12:06:28 youku.py parseUrl [line:12] DEBUG {'url': 'http://list.youku.com/category/show/c_84_s_1_d_1_p_1.html', 'site': 'youku', 'depth': 0}
+21916 MainThread 2016-Oct-13 14:58:53 main.py <module> [line:16] INFO --------begin--------
+15400 Thread-3 2016-Oct-13 14:58:53 youku.py parseUrl [line:13] DEBUG {'site': 'youku', 'depth': 0, 'url': 'http://list.youku.com/category/show/c_84_s_1_d_1_p_24.html'}
