@@ -19,6 +19,7 @@
 |:-------------------|:-------|:----|:----------|:----|
 |type_id||||id|
 |type||||正则所属类型|
+|description||||描述|
 
 纪录片表 `documentary`
 
@@ -43,11 +44,11 @@
 |status||||状态（0 todo, 1 doing, 2 done, 3 exception）|
 |website_id||||网站id|
 
-正则表 `regular`
+正则表 `regexs`
 
 | 字段名              | 数据类型| 长度 | 说明       | 描述 |
 |:-------------------|:-------|:----|:----------|:----|
 |website_id||||网站id|
 |type_id|||| 类型id|
-|regular|||| 正则 |
+|regex|||| 正则 |
 
