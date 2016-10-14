@@ -8,6 +8,7 @@ from urllib.parse import quote
 from urllib.error import URLError,HTTPError
 from builtins import UnicodeDecodeError
 from pymongo.collection import Collection
+from utils.log import log
 
 
 def getHtml(url):

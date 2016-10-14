@@ -23,7 +23,7 @@ def parseDepth0(url):
     html = tools.getHtml(url)
     # html = '<a href= "http://v.youku.com/v_show/id_XMzc4NDM3MjUy.html"/>'
     urls = tools.getUrls(html)
-    for url in videoUrl:
+    for url in urls:
         print(url)
 
 
