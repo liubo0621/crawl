@@ -1,7 +1,7 @@
 纪录片网络爬虫
 -------
 
-### 数据库 ###
+### 数据库 crawl ###
 
 网站表  `website`
 
@@ -42,6 +42,7 @@
 |url||||网址|
 |depth||||层级|
 |status||||状态（0 todo, 1 doing, 2 done, 3 exception）|
+|description||||描述|
 |website_id||||网站id|
 
 正则表 `regexs`

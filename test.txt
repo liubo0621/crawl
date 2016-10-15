@@ -1,0 +1,51 @@
+总集数
+<div class="basenotice">
+
+
+    更新至67
+
+</div>
+
+片名
+<span class="name">季录</span>
+
+播放量
+<ul class="basedata">
+        <li class="row2">
+            <span class="play">
+                <label>总播放:</label>130,909,754
+            </span>
+            <span class="comment">
+                <label>评论:</label><em class="num">23,024</em>
+            </span>
+        </li>
+        <li class="row2">
+            <span class="increm">
+                <label>顶:</label>102,607            </span>
+            <span class="vr">
+                                <label>指数:</label>
+                    <a title="优酷指数"  charset="423-2-16" href="http://hz.youku.com/red/click.php?tp=1&cp=4005347&cpp=1000536&url=http://index.youku.com/vr_show/showid_zda44bf1627ce11e69e2a.html" target="_blank" charset="" id="vr_id"></a>
+                        </span>
+        </li>
+        <li class="clear"></li>
+    </ul>
+
+节目简介
+<a class="desc-link" href="http://www.youku.com/show_page/id_z26582c245f8011e1b318.html" target="_blank">节目简介</a>
+
+简介
+    <span class="short" id="show_info_short" style="display: inline;">
+                                《鸿观》是一档“以金融视角还原过去、审视现在、回到未来；正经不严肃，解密不浮夸的新一代财经节目”。节目中他提到“战争胜负的背后都有经济、金融原理，任何战争都是货币战争”的观点，令人眼前一亮。
+                                </span>
+
+
+['\t\t\t\t\t\t\t央视纪录片频道《舌尖上的中国》将以从日本归来的“世界中餐大师”、“淮扬菜大师”居长龙作为纪录片主角，在央视的平台上展示淮扬菜的风采。<br />\n《舌尖上的中国》为中央电视台重点项目，共七集。主题围绕中国人对美食和生活的美好追求，用具体人物故事串联起中国各地美食生态。\n\t\t\t\t\t\t\t\t']
+
+
+#视频类
+
+<ul class="info-list"><li class="title"><a href="http://v.youku.com/v_show/id_XMTc2MjA4NzUzNg==.html" target="_blank" title="史上最美延安——国之盛会  完美开幕">史上最美延安——国之盛会  完美开幕</a></li><li class=" ">4.8万次播放 </li></ul>
+
+<ul class="info-list"><li class="title"><a href="http://v.youku.com/v_show/id_XMTc2MjYxNDYzNg==.html?from=y1.12-84" target="_blank" title="航拍茶溪村" data-spm-anchor-id="0.0.0.0">航拍茶溪村</a></li><li class=" ">4,968次播放 </li></ul>
+
+<ul class="info-list"><li class="title"><a href="http://v.youku.com/v_show/id_XMTc2MjM3NjAwOA==.html" target="_blank" title="引欢聚-曹伟伟《似水流年》面世庆贺仪式">引欢聚-曹伟伟《似水流年》面世庆贺仪式</a></li><li class=" ">183次播放 </li></ul>

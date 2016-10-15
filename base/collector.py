@@ -5,10 +5,14 @@ sys.path.append("..")
 import threading
 import time
 import base.constance as Constance
-
 import utils.tools as tools
+from utils.log import log
 
 mylock = threading.RLock()
+
+#test
+DEBUG =False
+DEPTH = 2
 
 class Singleton(object):
     def __new__(cls,*args,**kwargs):
@@ -18,13 +22,16 @@ class Singleton(object):
         return cls._inst
 
 class Collector(threading.Thread, Singleton):
-    _db = tools.connectDB()
+    _db = tools.getConnectedDB()
     _threadStop = False
     _urls = []
     _interval = int(tools.getConfValue("collector", "sleep_time"))
 
     #初始时将正在做的任务至为未做
     _db.urls.update({'status':Constance.DOING}, {'$set':{'status':Constance.TODO}}, multi=True)
+
+    if DEBUG:
+        log.debug("is debug depth = %s"%DEPTH)
 
     def __init__(self):
         super(Collector, self).__init__()
@@ -45,11 +52,13 @@ class Collector(threading.Thread, Singleton):
         website = tools.getConfValue("collector", "website")
         depth = int(tools.getConfValue("collector", "depth"))
         urlCount = int(tools.getConfValue("collector", "url_count"))
-        if website == 'all':
-            urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
+        if DEBUG:
+            urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":DEPTH},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
+        elif website == 'all':
+            urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
         else:
             websiteId = tools.getWebsiteId(Constance.YOUKU)
-            urlsList = Collector._db.urls.find({"status":Constance.TODO, "website_id":websiteId, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
+            urlsList = Collector._db.urls.find({"status":Constance.TODO, "website_id":websiteId, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
 
         Collector._urls.extend(urlsList)
 

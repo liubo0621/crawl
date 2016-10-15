@@ -7,7 +7,6 @@ from utils.log import log
 from base.collector import Collector
 from base.root_url import AddRootUrl
 from html_parser.parser_control import PaserControl
-import os
 
 def init():
     pass

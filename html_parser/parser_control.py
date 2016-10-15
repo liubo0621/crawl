@@ -9,7 +9,7 @@ import base.constance as Constance
 from html_parser.parsers import *
 from base.collector import Collector
 
-db = tools.connectDB()
+db = tools.getConnectedDB()
 
 class  PaserControl(threading.Thread):
     def __init__(self):

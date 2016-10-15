@@ -8,6 +8,8 @@ from urllib.parse import quote
 from urllib.error import URLError,HTTPError
 from builtins import UnicodeDecodeError
 from pymongo.collection import Collection
+import sys
+sys.path.append("..")
 from utils.log import log
 
 
@@ -18,33 +20,42 @@ def getHtml(url):
         page.close()
     except HTTPError as e:
         print(e.code)
-        return 0
+        return None
     except URLError as e:
         print(e.code)
-        return 0
+        return None
     except UnicodeDecodeError as e:
         print(e.code)
-        return 0
+        return None
     except socket.timeout as e:
         print(e.code)
-        return 0
+        return None
+    except Exception as e:
+        print(e.code)
     return html
 
 def getUrls(html):
-    urls = re.compile('<a.*?\"([http:|https:].+?)\"').findall(str(html))
-    return urls
+    urls = re.compile('<a.*\"(https?.+?)\"').findall(str(html))
+    return list(set(urls))
 
 def fitUrl(urls, identi):
     usus = []
     for link in urls:
         if identi in link:
             usus.append(link)
-    return usus
+    return list(set(usus))
 
-def getInfo(htmls,regular):
-    info = re.compile(regular).findall(str(htmls))
-    info = '.'.join(info)
-    return info
+def getInfo(html,regexs):
+    regexs = isinstance(regexs, str) and [regexs] or regexs
+
+    for regex in regexs:
+        infos = re.findall(regex,str(html),re.S)
+        # infos = re.compile(regexs).findall(str(html))
+        if len(infos) > 0:
+            break
+
+    return list(set(infos))
+
 
 ##################################################
 def getConfValue(section, key):
@@ -58,7 +69,7 @@ class DB():
     db = client.crawl
 
 db = DB.db
-def connectDB():
+def getConnectedDB():
     return db
 
 def dbSave(collection,dictInfo):
