@@ -64,6 +64,22 @@ def getConfValue(section, key):
     return cf.get(section, key)
 
 ##################################################
+
+#################时间转换相关####################
+def TimeListToString(timeList):
+    Times = 0
+    for word in timeList:
+        Times = Times + TimeToString(word)
+    return str(Times)
+
+def TimeToString(time):
+    timeList = time.split(':')
+    if len(timeList) == 3 :
+        return int(timeList[0]) * 3600 + int(timeList[1]) * 60 + int(timeList[2])
+    elif len(timeList) == 2:
+        return int(timeList[0]) * 60 + int(timeList[1])
+
+##################################################
 class DB():
     client = pymongo.MongoClient("localhost",27017)
     db = client.crawl

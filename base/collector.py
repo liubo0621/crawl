@@ -57,7 +57,7 @@ class Collector(threading.Thread, Singleton):
         elif website == 'all':
             urlsList = Collector._db.urls.find({"status":Constance.TODO, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)#sort -1 降序 1 升序
         else:
-            websiteId = tools.getWebsiteId(Constance.YOUKU)
+            websiteId = tools.getWebsiteId(website)
             urlsList = Collector._db.urls.find({"status":Constance.TODO, "website_id":websiteId, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
 
         Collector._urls.extend(urlsList)
