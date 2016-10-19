@@ -31,7 +31,7 @@ def parseUrl(urlInfo):
 
 def parseShowUrl(sourceUrl, websiteId):
     html = tools.getHtml(sourceUrl)
-    regTypeId = basePaser.getRegexTypeId(Constance.SHOW_URL)
+    regTypeId = basePaser.getRegexTypeId(Constance.VIDEO_URL)
     regexs = basePaser.getRegex(websiteId, regTypeId)
     urls = tools.getInfo(html, regexs)
 

@@ -19,19 +19,20 @@ def getHtml(url):
         html = page.read().decode('utf-8','ignore')
         page.close()
     except HTTPError as e:
-        print(e.code)
+        print(e)
         return None
     except URLError as e:
-        print(e.code)
+        print(e)
         return None
     except UnicodeDecodeError as e:
-        print(e.code)
+        print(e)
         return None
     except socket.timeout as e:
-        print(e.code)
+        print(e)
         return None
     except Exception as e:
-        print(e.code)
+        print(e)
+        return None
     return html
 
 def getUrls(html):
