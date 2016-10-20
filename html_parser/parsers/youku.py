@@ -72,7 +72,7 @@ def parseShowInfo(sourceUrl, websiteId):
         return
 
     #片名
-    regexs = 'class="name">(.+?)</span>'
+    regexs = '<h1 class="title">.*?class="name">(.+?)</span>'
     showName = tools.getInfo(html, regexs)
     showName = len(showName) > 0 and showName[0] or ''
     log.debug('片名：%s'%showName)
@@ -90,14 +90,19 @@ def parseShowInfo(sourceUrl, websiteId):
     log.debug('播放量: %s'%playCount)
 
     #简介
-    regexs = 'show_info_short.*?>\s*(.*?)\s*</span>'
+    regexs = '<div class="detail">(.*?)</div>'
     abstract = tools.getInfo(html, regexs)
     abstract = len(abstract) > 0 and abstract[0] or ''
-    rubbishs = tools.getInfo(abstract, '<.*>|\s*')  #查找简介里面的换行和html标签
-    #去掉简介中的换行符合html标签
+    rubbishs = tools.getInfo(abstract, '<.*?>')  #查找简介里面的html标签
+    #去掉简介中的html标签
     for rubbish in rubbishs:
         abstract = abstract.replace(rubbish, "")
-    # log.debug('简介: %s'%abstract)
+
+    rubbishs = tools.getInfo(abstract, '\s')  #查找简介里面的空白字符，包括空格、制表符、换页符等等
+    #去掉简介中的空白字符，包括空格、制表符、换页符等等
+    for rubbish in rubbishs:
+        abstract = abstract.replace(rubbish, "")
+    log.debug('简介: %s'%abstract)
 
 
     basePaser.addAocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
@@ -122,3 +127,4 @@ def parseVideoInfo(sourceUrl, websiteId):
         basePaser.addAocumentary(websiteId, videoName, '', videoUrl, 1, videoPlayNum)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
+
