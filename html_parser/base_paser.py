@@ -43,7 +43,7 @@ def addUrl(url, websiteId, depth, description, status = Constance.TODO):
     db.urls.save(urlDict)
 
 def updateUrl(url, status):
-    db.urls.update({'url':url}, {'$set':{'status':status}})
+    db.urls.update({'url':url}, {'$set':{'status':status}}, multi=True)
 
 # |doc_name||||片名|
 # |episode_num||||集数|
