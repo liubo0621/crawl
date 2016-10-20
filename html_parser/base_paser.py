@@ -49,16 +49,18 @@ def updateUrl(url, status):
 # |episode_num||||集数|
 # |abstract||||简介|
 # |play_num||||总播放量|
+# |url||||纪录片url|
 # |total_length||||总片长 (单位秒)|
 # |institutions||||播出机构|
 # |release_time||||发布时间|
 # |cyclopedia_msg||||百度百科上的信息|
 # |website_id||||网站id|
-def addAocumentary(websiteId, docName, abstract, episodeNum = '', playNum = '', totalLength = '', institutions = '', releaseTime = '', cyclopediaMsg = ''):
+def addAocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum = '', totalLength = '', institutions = '', releaseTime = '', cyclopediaMsg = ''):
     aocumentaryDict = {
         'website_id':websiteId,
         'doc_name':docName,
         'abstract':abstract,
+        'url':url,
         'episode_num':episodeNum,
         'play_num':playNum,
         'total_length':totalLength,

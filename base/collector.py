@@ -60,10 +60,10 @@ class Collector(threading.Thread, Singleton):
             websiteId = tools.getWebsiteId(website)
             urlsList = Collector._db.urls.find({"status":Constance.TODO, "website_id":websiteId, "depth":{"$lte":depth}},{"url":1, "_id":0,"depth":1, "description":1, "website_id":1}).sort([("depth",1)]).limit(urlCount)
 
+        urlsList = list(urlsList)
         Collector._urls.extend(urlsList)
-
         #更新已取到的url状态为doing
-        for url in Collector._urls:
+        for url in urlsList:
             Collector._db.urls.update(url, {'$set':{'status':Constance.DOING}})
 
         mylock.release()
@@ -78,7 +78,3 @@ class Collector(threading.Thread, Singleton):
         mylock.release()
 
         return urls
-
-
-
-

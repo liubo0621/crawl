@@ -21,6 +21,7 @@ class  PaserControl(threading.Thread):
     def run(self):
         while True:
             urls = self._collector.getUrls(self._urlCount)
+            print("取到的url大小 %d"%len(urls))
             for url in urls:
                 self.parseUrl(url)
 
@@ -30,7 +31,6 @@ class  PaserControl(threading.Thread):
         website_id = urlInfo['website_id']
 
         domain = list(db.website.find({'_id':website_id}))[0]['domain']
-
         if domain == Constance.YOUKU:
             youku.parseUrl(urlInfo)
 

@@ -31,6 +31,10 @@ def parseUrl(urlInfo):
 
 def parseShowUrl(sourceUrl, websiteId):
     html = tools.getHtml(sourceUrl)
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
     regTypeId = basePaser.getRegexTypeId(Constance.VIDEO_URL)
     regexs = basePaser.getRegex(websiteId, regTypeId)
     urls = tools.getInfo(html, regexs)
@@ -43,20 +47,30 @@ def parseShowUrl(sourceUrl, websiteId):
 
 #取节目简介url
 def parseShowDescribeUrl(sourceUrl, websiteId):
+    log.debug('取节目简介 url ' + sourceUrl)
     html = tools.getHtml(sourceUrl)
-    regexs = 'desc-link.*?href="(.+?)"'
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
+    log.debug("-------------------")
+    regexs = 'class="desc-link".*?href="(.+?)"'
     urls = tools.getInfo(html, regexs)
     for url in urls:
         log.debug("节目简介url: %s"%url)
         basePaser.addUrl(url, websiteId, SHOW_INFO, 'show')
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
-
+    log.debug("-------------------")
 
 def parseShowInfo(sourceUrl, websiteId):
     log.debug('解析节目信息%s'%sourceUrl)
 
     html = tools.getHtml(sourceUrl)
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
     #片名
     regexs = 'class="name">(.+?)</span>'
     showName = tools.getInfo(html, regexs)
@@ -83,26 +97,28 @@ def parseShowInfo(sourceUrl, websiteId):
     #去掉简介中的换行符合html标签
     for rubbish in rubbishs:
         abstract = abstract.replace(rubbish, "")
-    log.debug('简介: %s'%abstract)
+    # log.debug('简介: %s'%abstract)
 
-    basePaser.addAocumentary(websiteId, showName, abstract, episodeNum, playCount)
+
+    basePaser.addAocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
 
 def parseVideoInfo(sourceUrl, websiteId):
     log.debug("解析视频 baserul = %s"%sourceUrl)
     html = tools.getHtml(sourceUrl)
-    #片名
-    regexs = 'class="info-list">.*?title="\s*(.+?)\s*">.*?<li class=" ">\s*(.+?)\s*</li>'
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
+    #片名 播放量
+    regexs = 'class="info-list">.*?href="(.+?)".*?title="\s*(.+?)\s*">.*?<li class=" ">\s*(.+?)\s*</li>'
     videosInfo = tools.getInfo(html, regexs)
     for videoInfo in videosInfo:
-        videoName = videoInfo[0]
-        videoPlayNum = videoInfo[1]
-        log.debug("视频：%s, 播放量：%s"%(videoName, videoPlayNum))
-        basePaser.addAocumentary(websiteId, videoName, '', 1, videoPlayNum)
+        videoUrl = videoInfo[0]
+        videoName = videoInfo[1]
+        videoPlayNum = videoInfo[2]
+        log.debug("视频：%s\n播放量：%s\nurl: %s\n"%(videoName, videoPlayNum, videoUrl))
+        basePaser.addAocumentary(websiteId, videoName, '', videoUrl, 1, videoPlayNum)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
-
-
-
-

@@ -29,6 +29,7 @@
 |episode_num||||集数|
 |abstract||||简介|
 |play_num||||总播放量|
+|url||||纪录片url|
 |total_length||||总片长 (单位秒)|
 |institutions||||播出机构|
 |release_time||||发布时间|

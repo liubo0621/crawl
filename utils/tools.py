@@ -15,7 +15,7 @@ from utils.log import log
 
 def getHtml(url):
     try:
-        page = request.urlopen(quote(url,safe='/:?='))
+        page = request.urlopen(quote(url,safe='/:?='), timeout = 3)
         html = page.read().decode('utf-8','ignore')
         page.close()
     except HTTPError as e:
