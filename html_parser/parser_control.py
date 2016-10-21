@@ -33,4 +33,6 @@ class  PaserControl(threading.Thread):
         domain = list(db.website.find({'_id':website_id}))[0]['domain']
         if domain == Constance.YOUKU:
             youku.parseUrl(urlInfo)
+        elif domain == Constance.TENCENT:
+            tencent.parseUrl(urlInfo)
 

@@ -15,6 +15,7 @@ class AddRootUrl(threading.Thread):
 
     def run(self):
         self.addYoukuUrl()
+        self.addTencentUrl()
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
@@ -92,4 +93,14 @@ class AddRootUrl(threading.Thread):
             for i in range(1, pageNum + 1):
                 url = typeUrl.replace('.html', '_p_%d.html'%i)
                 self.addUrl(url, websiteId, 'video')
+
+    def addTencentUrl(self):
+        baseUrl = 'http://v.qq.com/x/documentarylist/?itype=-1&offset=%d&sort=4'
+        pageCount = 121     # 后续改成动态获取网页上的尾页  正则：'data-total="(.+)"></div)'
+        websiteId = tools.getWebsiteId(Constance.TENCENT)
+        #self.addUrl('http://v.qq.com/x/documentarylist/?itype=-1&offset=0&sort=4', websiteId)
+        for i in range(0, pageCount * 20, 20):
+            url = 'http://v.qq.com/x/documentarylist/?itype=-1&offset=%d&sort=4'%i
+            log.debug("tencent base url = %s"%url)
+            self.addUrl(url, websiteId)
 

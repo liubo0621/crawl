@@ -46,7 +46,7 @@ def fitUrl(urls, identi):
             usus.append(link)
     return list(set(usus))
 
-def getInfo(html,regexs):
+def getInfo(html,regexs, allowRepeat = False):
     regexs = isinstance(regexs, str) and [regexs] or regexs
 
     for regex in regexs:
@@ -55,7 +55,7 @@ def getInfo(html,regexs):
         if len(infos) > 0:
             break
 
-    return list(set(infos))
+    return allowRepeat and infos or list(set(infos))
 
 
 ##################################################
@@ -67,13 +67,13 @@ def getConfValue(section, key):
 ##################################################
 
 #################时间转换相关####################
-def TimeListToString(timeList):
-    Times = 0
+def timeListToString(timeList):
+    times = 0
     for word in timeList:
-        Times = Times + TimeToString(word)
-    return str(Times)
+        times = times + timeToString(word)
+    return str(times)
 
-def TimeToString(time):
+def timeToString(time):
     timeList = time.split(':')
     if len(timeList) == 3 :
         return int(timeList[0]) * 3600 + int(timeList[1]) * 60 + int(timeList[2])

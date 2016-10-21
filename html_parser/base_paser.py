@@ -73,3 +73,21 @@ def addAocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum =
         return
 
     db.documentary.save(aocumentaryDict)
+
+def addAocumentaryList(websiteId, inforList):
+    aocumentaryDict = {
+        'website_id':websiteId,
+        'doc_name':inforList[0],
+        'episode_num':inforList[1],
+        'abstract':inforList[2],
+        'play_num':inforList[3],
+        'total_length':inforList[4],
+        'institutions':inforList[5],
+        'release_time':inforList[6],
+        'cyclopedia_msg':inforList[7]
+        }
+
+    for i in db.documentary.find(aocumentaryDict):
+        return
+
+    db.documentary.save(aocumentaryDict)
