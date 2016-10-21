@@ -14,8 +14,9 @@ class AddRootUrl(threading.Thread):
         super(AddRootUrl, self).__init__()
 
     def run(self):
-        self.addYoukuUrl()
-        self.addTencentUrl()
+        # self.addYoukuUrl()
+        # self.addTencentUrl()
+        self.addWangYiUrl()
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
@@ -102,5 +103,14 @@ class AddRootUrl(threading.Thread):
         for i in range(0, pageCount * 20, 20):
             url = 'http://v.qq.com/x/documentarylist/?itype=-1&offset=%d&sort=4'%i
             log.debug("tencent base url = %s"%url)
+            self.addUrl(url, websiteId)
+
+    def addWangYiUrl(self):
+        baseUrl = 'http://so.v.163.com/search/000-0-0000-1-%d-0-纪录片/'
+        pageCount = 614
+        websiteId = tools.getWebsiteId(Constance.WANG_YI)
+        for i in range(1, pageCount + 1):
+            url = baseUrl%i
+            log.debug("wangyi base url = %s"%url)
             self.addUrl(url, websiteId)
 

@@ -1,37 +1,6 @@
-节目名：
-<h6 class="caption  ">
-
-
-<a href="http://www.tudou.com/albumplay/wnaSZqXgfw8.html" title="故宫" target="_blank">故宫</a>
-
-
-</h6>
-
-
-<h6 class="caption  ">
-
-
-<a href="http://www.tudou.com/albumplay/ZRXDXQQ7lNA.html" title="军情解码 2011" target="_blank">军情解码 2011</a>
-
-
-</h6>
-
-简介：
-<p class="desc">《荒野求生》，是美国探索频道制作的一档写实电视节目，由英国冒险家贝尔·格里尔斯主持，每集他会走到沙漠、沼泽、森林、峡谷等危险的野外境地，在极为恶劣的环境下，为脱离险境，设法寻找回到文明社会的路径。</p>
-
-集数：
-
-<p class="info">全12集/共12集<small>美国/2016/<span>自然,探险</span><p class="desc">《荒野求生》，是美国探索频道制作的一档写实电视节目，由英国冒险家贝尔·格里尔斯主持，每集他会走到沙漠、沼泽、森林、峡谷等危险的野外境地，在极为恶劣的环境下，为脱离险境，设法寻找回到文明社会的路径。</p></small><p class="desc">《荒野求生》，是美国探索频道制作的一档写实电视节目，由英国冒险家贝尔·格里尔斯主持，每集他会走到沙漠、沼泽、森林、峡谷等危险的野外境地，在极为恶劣的环境下，为脱离险境，设法寻找回到文明社会的路径。</p></p>
-
-播放量：
-
-
-
-
--Tg6nPUVQcc,yLsAZW7j0k8,zkdKc05cpG8,GsA10DkHJQ0,mga_qkZgtYw,uRh9u2GWqrw,onSBCSp62Us,5KXBZOQzFZQ,2QTmrssX0s0,doRs6LiUwAo,N4tLdWyl6xA,ohH3BSLm0H0,qTCe2eNRHOA,1GV70XactPQ,mNkcJhNZqBg,eFHN_npa4kI,uvUJFrRfsJw,TCVdIHL_HPk,L1uJRlGHVQQ,Hxh5rcMserM,d7JipptmTO4,MirRTrQy60w,WDl5jQ5Yh68,bRROI7LoqLk
-
-
 土豆：
+
+剧集：
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
 
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=2&sortDesc=quality
@@ -39,11 +8,45 @@ http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsit
 
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=3&sortDesc=quality
 
+片名： "title":"猎奇笔记",
+集数："updateInfo":"更新至73集"
+简介：
+<meta name="description" content="雷史我聊 《雷史我聊》是一档奇葩的网络历史节目，准确的说是奇葩的雷史调侃节目。专门调侃天南海北，古今中外那些不为人知，尘封已久的历史故事以及人所周知却另有蹊跷的历史真相。只有你想不到，没有我雷不倒！ 纪实"/>
 
---------------------------
-优酷
+<p class="desc">《雷史我聊》是一档奇葩的网络历史节目，准确的说是奇葩的雷史调侃节目。专门调侃天南海北，古今中外那些不为人知，尘封已久的历史故事以及人所周知却另有蹊跷的历史真相。只有你想不到，没有我雷不倒！</p>
 
-最大页数
-<div class="item" style="display: block;"><label>类型：</label><ul><li class="current"><span>全部</span></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2363.html">人物</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2364.html">军事</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2365.html">历史</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2366.html">宇宙</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2367.html">自然</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2368.html">古迹</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2369.html">探险</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2370.html">科技</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2371.html">文化</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2372.html">刑侦</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2373.html">社会</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2374.html">财经</a></li><li><a href="http://list.youku.com/category/video/c_84_d_1_s_1_g_2375.html">旅游</a></li></ul></div>
 
+播放量：
+
+http://www.tudou.com/crp/itemSum.action?jsoncallback=page_play_model_itemSumModel__find&app=8&showArea=true&iabcdefg=133015059&uabcdefg=0&juabcdefg=01auraemub2qj4
+http://www.tudou.com/crp/itemSum.action?jsoncallback=page_play_model_itemSumModel__find&app=8&showArea=true&iabcdefg=132888768&uabcdefg=0&juabcdefg=01auraemub2qj4
+
+源代码中 ,iid: 132888768
+
+url： "playUrl":"http://www.tudou.com/albumplay/6I0flZRc06o.html",
+
+{
+            "albumId":247836,
+            "alias":"",
+            "title":"猎奇笔记",
+            "playtimes":513690,
+            "actors":[
+
+            ],
+            "itemTitle":"探索未知的神秘事件",
+            "reputation":0,
+            "hdType":3,
+            "playUrl":"http://www.tudou.com/albumplay/6I0flZRc06o.html",
+            "albumShortDesc":"探索未知的神秘事件",
+            "needMoney":false,
+            "aid":298802,
+            "picUrl_200x112":"http://r4.ykimg.com/0542010157FF6908641DA51C5866248C",
+            "picUrl_200x300":"http://u1.tdimg.com/8/95/93/_3490204383959077149000807416261645108.jpg",
+            "picUrl_448x252":"http://r4.ykimg.com/0542010157FF6908641DA51C5866248C",
+            "picUrl_448x672":"http://r3.ykimg.com/050E0000555EC5FD67BC3C7A470BCFF7",
+            "channelId":0,
+            "isSerial":0,
+            "payInfo":null,
+            "updateInfo":"更新至73集"
+        },
 

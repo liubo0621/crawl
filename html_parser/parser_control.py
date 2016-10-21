@@ -35,4 +35,6 @@ class  PaserControl(threading.Thread):
             youku.parseUrl(urlInfo)
         elif domain == Constance.TENCENT:
             tencent.parseUrl(urlInfo)
+        elif domain == Constance.WANG_YI:
+            wangyi.parseUrl(urlInfo)
 

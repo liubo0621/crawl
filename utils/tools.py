@@ -13,10 +13,10 @@ sys.path.append("..")
 from utils.log import log
 
 
-def getHtml(url):
+def getHtml(url, code = 'utf-8'):
     try:
         page = request.urlopen(quote(url,safe='/:?='), timeout = 3)
-        html = page.read().decode('utf-8','ignore')
+        html = page.read().decode(code,'ignore')
         page.close()
     except HTTPError as e:
         print(e)
