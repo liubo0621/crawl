@@ -55,7 +55,7 @@ def updateUrl(url, status):
 # |release_time||||发布时间|
 # |cyclopedia_msg||||百度百科上的信息|
 # |website_id||||网站id|
-def addAocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum = '', totalLength = '', institutions = '', releaseTime = '', cyclopediaMsg = ''):
+def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum = '', totalLength = '', institutions = '', releaseTime = '', cyclopediaMsg = ''):
     aocumentaryDict = {
         'website_id':websiteId,
         'doc_name':docName,
@@ -69,25 +69,17 @@ def addAocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum =
         'cyclopedia_msg':cyclopediaMsg
         }
 
-    for i in db.documentary.find(aocumentaryDict):
+    # 查找数据库，看是否有相同的纪录片，若有，则比较纪录片信息，将信息更全的纪录片更新到数据库中
+    for doc in db.documentary.find({'doc_name':docName}, {'_id':0}):
+        for key, value in doc.items():
+            if len(str(doc[key])) < len(str(aocumentaryDict[key])):
+                doc[key] = aocumentaryDict[key]
+        db.documentary.update({'doc_name':docName}, {'$set':doc})
         return
 
     db.documentary.save(aocumentaryDict)
 
-def addAocumentaryList(websiteId, inforList):
-    aocumentaryDict = {
-        'website_id':websiteId,
-        'doc_name':inforList[0],
-        'episode_num':inforList[1],
-        'abstract':inforList[2],
-        'play_num':inforList[3],
-        'total_length':inforList[4],
-        'institutions':inforList[5],
-        'release_time':inforList[6],
-        'cyclopedia_msg':inforList[7]
-        }
+def addDocumentaryList(websiteId, inforList):
+    addDocumentary(websiteId, inforList[0], inforList[2], inforList[8], inforList[1], inforList[3], inforList[4], inforList[5], inforList[6], inforList[7])
 
-    for i in db.documentary.find(aocumentaryDict):
-        return
-
-    db.documentary.save(aocumentaryDict)
+# addDocumentary('580981f95344650b3c285522', "勿忘国耻！吾辈当自强！！", "abstract", "http://v.youku.com/v_show/id_XMTc2Nzc2OTEwNA==.html")

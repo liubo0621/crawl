@@ -105,7 +105,7 @@ def parseShowInfo(sourceUrl, websiteId):
     log.debug('简介: %s'%abstract)
 
 
-    basePaser.addAocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
+    basePaser.addDocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
 
@@ -124,7 +124,7 @@ def parseVideoInfo(sourceUrl, websiteId):
         videoName = videoInfo[1]
         videoPlayNum = videoInfo[2]
         log.debug("视频：%s\n播放量：%s\nurl: %s\n"%(videoName, videoPlayNum, videoUrl))
-        basePaser.addAocumentary(websiteId, videoName, '', videoUrl, 1, videoPlayNum)
+        basePaser.addDocumentary(websiteId, videoName, '', videoUrl, 1, videoPlayNum)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
 

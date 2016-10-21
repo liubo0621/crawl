@@ -56,6 +56,6 @@ def parseLeafUrl(sourceUrl, websiteId):
     # 分集时间求出总时间 单位：s
     albumInfo[4] = tools.timeListToString(albumInfo[4])
 
-    basePaser.addAocumentaryList(websiteId, albumInfo)
-	
+    basePaser.addDocumentaryList(websiteId, albumInfo)
+
     basePaser.updateUrl(sourceUrl, Constance.DONE)
