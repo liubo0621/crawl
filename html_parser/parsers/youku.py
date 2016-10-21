@@ -102,8 +102,10 @@ def parseShowInfo(sourceUrl, websiteId):
     #去掉简介中的空白字符，包括空格、制表符、换页符等等
     for rubbish in rubbishs:
         abstract = abstract.replace(rubbish, "")
-    log.debug('简介: %s'%abstract)
-
+    try:
+        log.debug('简介: %s'%abstract)
+    except:
+        pass
 
     basePaser.addDocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
 

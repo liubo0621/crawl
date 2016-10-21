@@ -62,20 +62,24 @@ def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum =
         'abstract':abstract,
         'url':url,
         'episode_num':episodeNum,
-        'play_num':playNum,
         'total_length':totalLength,
         'institutions':institutions,
         'release_time':releaseTime,
         'cyclopedia_msg':cyclopediaMsg
         }
 
-    # 查找数据库，看是否有相同的纪录片，若有，则比较纪录片信息，将信息更全的纪录片更新到数据库中
-    for doc in db.documentary.find({'doc_name':docName}, {'_id':0}):
-        for key, value in doc.items():
-            if len(str(doc[key])) < len(str(aocumentaryDict[key])):
-                doc[key] = aocumentaryDict[key]
-        db.documentary.update({'doc_name':docName}, {'$set':doc})
+    for doc in db.documentary.find(aocumentaryDict):
         return
+
+    aocumentaryDict['play_num']= playNum
+
+    # # 查找数据库，看是否有相同的纪录片，若有，则比较纪录片信息，将信息更全的纪录片更新到数据库中
+    # for doc in db.documentary.find({'doc_name':docName}, {'_id':0}):
+    #     for key, value in doc.items():
+    #         if len(str(doc[key])) < len(str(aocumentaryDict[key])):
+    #             doc[key] = aocumentaryDict[key]
+    #     db.documentary.update({'doc_name':docName}, {'$set':doc})
+    #     return
 
     db.documentary.save(aocumentaryDict)
 
