@@ -37,4 +37,6 @@ class  PaserControl(threading.Thread):
             tencent.parseUrl(urlInfo)
         elif domain == Constance.WANG_YI:
             wangyi.parseUrl(urlInfo)
+        elif domain == Constance.PPTV:
+            pptv.parseUrl(urlInfo)
 

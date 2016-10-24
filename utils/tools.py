@@ -1,38 +1,23 @@
 # encoding=utf8
 from urllib import request
-import socket
 import re
 import pymongo
 import configparser #读配置文件的
 from urllib.parse import quote
-from urllib.error import URLError,HTTPError
-from builtins import UnicodeDecodeError
-from pymongo.collection import Collection
 import sys
 sys.path.append("..")
 from utils.log import log
 
 
 def getHtml(url, code = 'utf-8'):
+    html = None
     try:
-        page = request.urlopen(quote(url,safe='/:?='), timeout = 3)
+        page = request.urlopen(quote(url,safe='/:?=&'), timeout = 3)
         html = page.read().decode(code,'ignore')
         page.close()
-    except HTTPError as e:
-        print(e)
-        return None
-    except URLError as e:
-        print(e)
-        return None
-    except UnicodeDecodeError as e:
-        print(e)
-        return None
-    except socket.timeout as e:
-        print(e)
-        return None
+
     except Exception as e:
-        print(e)
-        return None
+        log.error(e)
     return html
 
 def getUrls(html):

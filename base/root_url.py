@@ -14,9 +14,20 @@ class AddRootUrl(threading.Thread):
         super(AddRootUrl, self).__init__()
 
     def run(self):
-        # self.addYoukuUrl()
-        # self.addTencentUrl()
-        self.addWangYiUrl()
+        website = tools.getConfValue("collector", "website")
+        if website == 'all':
+            self.addYoukuUrl()
+            self.addTencentUrl()
+            self.addWangYiUrl()
+            self.addPPTVUrl()
+        elif website == Constance.YOUKU:
+            self.addYoukuUrl()
+        elif website == Constance.TENCENT:
+            self.addTencentUrl()
+        elif website == Constance.WANG_YI:
+            self.addWangYiUrl()
+        elif website == Constance.PPTV:
+            self.addPPTVUrl()
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
@@ -112,5 +123,14 @@ class AddRootUrl(threading.Thread):
         for i in range(1, pageCount + 1):
             url = baseUrl%i
             log.debug("wangyi base url = %s"%url)
+            self.addUrl(url, websiteId)
+
+    def addPPTVUrl(self):
+        baseUrl = 'http://list.pptv.com/channel_list.html?page=%d&type=210548&sort=1'
+        pageCount = 17
+        websiteId = tools.getWebsiteId(Constance.PPTV)
+        for i in range(1, pageCount + 1):
+            url = baseUrl%i
+            log.debug("pptv base url = %s"%url)
             self.addUrl(url, websiteId)
 

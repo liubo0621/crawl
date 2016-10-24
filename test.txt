@@ -10,6 +10,7 @@ http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsit
 
 片名： "title":"猎奇笔记",
 集数："updateInfo":"更新至73集"
+
 简介：
 <meta name="description" content="雷史我聊 《雷史我聊》是一档奇葩的网络历史节目，准确的说是奇葩的雷史调侃节目。专门调侃天南海北，古今中外那些不为人知，尘封已久的历史故事以及人所周知却另有蹊跷的历史真相。只有你想不到，没有我雷不倒！ 纪实"/>
 
