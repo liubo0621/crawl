@@ -35,7 +35,7 @@ def getRegex(websiteId, regTypeId):
     return regexs
 
 ##################################################
-def addUrl(url, websiteId, depth, description, status = Constance.TODO):
+def addUrl(url, websiteId, depth, description = '', status = Constance.TODO):
     for i in db.urls.find({'url':url}):
         return
 
@@ -45,17 +45,23 @@ def addUrl(url, websiteId, depth, description, status = Constance.TODO):
 def updateUrl(url, status):
     db.urls.update({'url':url}, {'$set':{'status':status}}, multi=True)
 
-# |doc_name||||片名|
-# |episode_num||||集数|
-# |abstract||||简介|
-# |play_num||||总播放量|
-# |url||||纪录片url|
-# |total_length||||总片长 (单位秒)|
-# |institutions||||播出机构|
-# |release_time||||发布时间|
-# |cyclopedia_msg||||百度百科上的信息|
-# |website_id||||网站id|
-def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum = '', totalLength = '', institutions = '', releaseTime = '', cyclopediaMsg = ''):
+def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum = '', totalLength = '', releaseTime = '', institutions = '', cyclopediaMsg = ''):
+    '''
+    @summary: 添加纪录片
+    ---------
+    @param websiteId: 网站id
+    @param docName: 片名
+    @param abstract: 简介
+    @param url: 纪录片url
+    @param episodeNum: 集数
+    @param playNum: 播放次数
+    @param totalLength: 时长
+    @param releaseTime: 发布时间
+    @param institutions: 播出机构
+    @param cyclopediaMsg: 百科信息
+    ---------
+    @result:
+    '''
     aocumentaryDict = {
         'website_id':websiteId,
         'doc_name':docName,

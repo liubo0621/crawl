@@ -26,7 +26,7 @@ def parseUrl(urlInfo):
         videoReleaseTime = info[1]
         videoName = info[2]
         log.debug('\n片名 %s\n发布时间 %s\nnurl %s\n'%(videoName, videoReleaseTime, videoUrl))
-        basePaser.addDocumentary(websiteId, videoName, '', videoUrl, '', '', '', '', videoReleaseTime)
+        basePaser.addDocumentary(websiteId, videoName, '', videoUrl, '', '', '', videoReleaseTime)
 
 
 

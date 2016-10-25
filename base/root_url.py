@@ -20,6 +20,7 @@ class AddRootUrl(threading.Thread):
             self.addTencentUrl()
             self.addWangYiUrl()
             self.addPPTVUrl()
+            self.addKanKanUrl()
         elif website == Constance.YOUKU:
             self.addYoukuUrl()
         elif website == Constance.TENCENT:
@@ -28,6 +29,8 @@ class AddRootUrl(threading.Thread):
             self.addWangYiUrl()
         elif website == Constance.PPTV:
             self.addPPTVUrl()
+        elif website == Constance.KAN_KAN:
+            self.addKanKanUrl()
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
@@ -134,3 +137,44 @@ class AddRootUrl(threading.Thread):
             log.debug("pptv base url = %s"%url)
             self.addUrl(url, websiteId)
 
+    def addKanKanUrl(self):
+        def getPageNum(url):
+            html = tools.getHtml(url)
+            regex = 'list-pager-v2.*>(.*?)</a><a id="pagenav_next"'
+            pageNum = tools.getInfo(html, regex)
+            pageNum = len(pageNum) == 0 and '1' or pageNum[0]
+            # log.debug(pageNum)
+            return int(pageNum)
+
+        # 全部视频
+        websiteId = tools.getWebsiteId(Constance.KAN_KAN)
+        baseUrl = 'http://movie.kankan.com/type/documentary/'
+        log.debug("kankan base url = %s"%baseUrl)
+        self.addUrl(baseUrl, websiteId)
+
+        pageCount = getPageNum(baseUrl)
+        log.debug("kankan 页数 = %d"%pageCount)
+        for i in range(2, pageCount + 1):
+            url = baseUrl + 'page%d/'%i
+            log.debug("kankan base url = %s"%url)
+            self.addUrl(url, websiteId)
+
+        # 按类型
+        log.debug('----------------------按类型分类-----------------------')
+        regex = '"div_genre">(.*?)</dd>'
+        html = tools.getHtml(baseUrl)
+        typeBlockUrl = tools.getInfo(html, regex)
+
+        regex = ' href="(.*?)"'
+        typeUrls = tools.getInfo(typeBlockUrl, regex)
+        for typeBaseUrl in typeUrls:
+            log.debug("kankan type base url = %s"%typeBaseUrl)
+            pageCount = getPageNum(typeBaseUrl)
+            log.debug("kankan 页数 = %d"%pageCount)
+
+            self.addUrl(typeBaseUrl, websiteId)
+
+            for i in range(2, pageCount + 1):
+                url = typeBaseUrl + 'page%d/'%i
+                log.debug("kankan type base url = %s"%url)
+                self.addUrl(url, websiteId)

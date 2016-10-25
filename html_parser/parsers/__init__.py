@@ -3,4 +3,5 @@ __all__ = [
     "tencent",
     "wangyi",
     "pptv",
+    "kankan",
  ]

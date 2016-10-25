@@ -39,4 +39,6 @@ class  PaserControl(threading.Thread):
             wangyi.parseUrl(urlInfo)
         elif domain == Constance.PPTV:
             pptv.parseUrl(urlInfo)
+        elif domain == Constance.KAN_KAN:
+            kankan.parseUrl(urlInfo)
 

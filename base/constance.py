@@ -11,6 +11,7 @@ YOUKU          = 'youku.com'
 TENCENT		   = 'v.qq.com'
 WANG_YI        = '163.com'
 PPTV           = 'pptv.com'
+KAN_KAN        = 'kankan.com'
 
 #正则类型
 DOC_NAME       = 'doc_name'

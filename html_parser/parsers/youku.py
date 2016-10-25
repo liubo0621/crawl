@@ -53,7 +53,6 @@ def parseShowDescribeUrl(sourceUrl, websiteId):
         basePaser.updateUrl(sourceUrl, Constance.TODO)
         return
 
-    log.debug("-------------------")
     regexs = 'class="desc-link".*?href="(.+?)"'
     urls = tools.getInfo(html, regexs)
     for url in urls:
@@ -61,7 +60,6 @@ def parseShowDescribeUrl(sourceUrl, websiteId):
         basePaser.addUrl(url, websiteId, SHOW_INFO, 'show')
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
-    log.debug("-------------------")
 
 def parseShowInfo(sourceUrl, websiteId):
     log.debug('解析节目信息%s'%sourceUrl)
@@ -102,10 +100,7 @@ def parseShowInfo(sourceUrl, websiteId):
     #去掉简介中的空白字符，包括空格、制表符、换页符等等
     for rubbish in rubbishs:
         abstract = abstract.replace(rubbish, "")
-    try:
-        log.debug('简介: %s'%abstract)
-    except:
-        pass
+    log.debug('简介: %s'%abstract)
 
     basePaser.addDocumentary(websiteId, showName, abstract, sourceUrl, episodeNum, playCount)
 

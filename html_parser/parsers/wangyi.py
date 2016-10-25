@@ -31,6 +31,6 @@ def parseUrl(urlInfo):
             videoName = videoName.replace(rubbish, "")
 
         log.debug('\n片名 %s\n发布时间 %s\n时长 %s\nurl %s\n'%(videoName, videoReleaseTime, videoLength, videoUrl))
-        basePaser.addDocumentary(websiteId, videoName, '', videoUrl, 1, '', videoLength, '', videoReleaseTime)
+        basePaser.addDocumentary(websiteId, videoName, '', videoUrl, 1, '', videoLength, videoReleaseTime)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)

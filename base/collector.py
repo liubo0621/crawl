@@ -12,7 +12,7 @@ mylock = threading.RLock()
 
 #test
 DEBUG =False
-DEPTH = 2
+DEPTH = 0
 
 class Singleton(object):
     def __new__(cls,*args,**kwargs):

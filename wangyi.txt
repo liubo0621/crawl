@@ -1,45 +1,50 @@
-  <li >
-<a class="ui-list-ct" is_virtual=""  is_hj="0" cid="23617859" href='http://v.pptv.com/show/Q2Br6FC2JmTHRa0.html?rcc_src=L1' target='_blank' title="档案-20150626-血战长津湖">
-    <p class="ui-pic">
-        <img src="http://static9.pplive.cn/pptv/index/v_201202141528/images/no.gif" data-src2="http://v.img.pplive.cn/sp160/ee/16/ee165b241a7087f4d9eddaf04c7e3e79/1.jpg">
+响巢看看
+<p class="movielist_tt">
+    <a title="真相" href="http://vod.kankan.com/v/70/70361.shtml" target="_blank">真相</a>
+    <em class="update">1231期</em>
+</p>
+
+播放次数
+语言
+发布时间
+集数
+片长
+简介
+出品地区
 
 
+<div class="info_list" id="movie_basic_info">
+                            <ul><!--默认折叠时显示的信息-->
 
 
-        <span class="v-bg"></span>
+                                <li>类型：<a href="http://movie.kankan.com/type,genre/documentary,d_sh/" target="_blank" title="社会">社会</a></li>                                <li>地区：<a href="http://movie.kankan.com/type,area/documentary,8/" target="_blank" title="中国内地">中国内地</a></li>                                <li>语言：国语</li>                                <li>年份：<a href="http://movie.kankan.com/type,year/documentary,2015/" target="_blank" title="2015">2015</a></li>                                                                <li>更新至：2016-02-03期</li>
+                                                                <li>播放次数：<span>40,041次</span></li>
+                                                            </ul>
+                            <ul class="more"><!--展开后显示的更多信息-->
 
-                                <span class="v-ico v-show"></span><!--v-show代表有播放 -->
-        <i class="v-ico2"></i>
-                                <span class="s_seen"></span>
-        <i class="ico_seen"></i>
-    </p>
-    <p class="ui-txt">
-        <span class="main-tt">档案-20150626-血战长津湖</span>
-    </p>
-</a>
-</li>
+                            </ul>
+                        </div>
 
 
+<div class="s4 introduction" style="display:block;">
+                    <h2>赚钱简介</h2>
+                    <div class="cont"><!--展开时给该div添加class: on ；折叠时去掉class: on -->
+                        <p></p>
+                    </div>
+                </div>
 
-<li class="tips">
-                <a class="ui-list-ct" is_virtual=""  is_hj="1" cid="9022040" href='http://v.pptv.com/show/WDAcmgJo2BZ5918.html?rcc_src=L1' target='_blank' title="往事">
-                    <p class="ui-pic">
-                        <img src="http://static9.pplive.cn/pptv/index/v_201202141528/images/no.gif" data-src2="http://v.img.pplive.cn/sp160/68/e5/68e5e7474be1e69474e4850be8c816f8/1.jpg">
+ <div class="s4 introduction"style="display:block;">
+                    <h2>野外求生夫妻档02简介</h2>
+                    <div class="cont"><!--展开时给该div添加class: on ；折叠时去掉class: on -->
+                        <div class="cont_p" id="intro_cont_first"><p>在本集节目中，贝尔将通过一系列生存实验，展示如何在莫哈韦沙漠求生。他在三万英尺的高空被抛出飞机，从零下四十度的低温一下子降落在温度高达一百一十度的沙漠地表。炎炎烈日下，贝尔遭遇了一场如飓风般猛烈的沙尘暴。在干涸的河床上露营无疑是最糟糕的决定，因为贝尔就在那里遇到了山洪大暴发，他被迫向下游艰难行进，而要逃过响尾蛇的致命攻<span class="">......<a href="javascript://" id="intro_btn_fold">[详细]</a></span></p></div><div class="cont_p" id="intro_cont_all" style="display:none;"><p>在本集节目中，贝尔将通过一系列生存实验，展示如何在莫哈韦沙漠求生。他在三万英尺的高空被抛出飞机，从零下四十度的低温一下子降落在温度高达一百一十度的沙漠地表。炎炎烈日下，贝尔遭遇了一场如飓风般猛烈的沙尘暴。在干涸的河床上露营无疑是最糟糕的决定，因为贝尔就在那里遇到了山洪大暴发，他被迫向下游艰难行进，而要逃过响尾蛇的致命攻击，反应速度不快可不行。</p><span class="unfold2"><a href="javascript://" id="intro_btn_unfold">[收回]</a></span></div>
+                    </div>
+                </div>
 
-                                                <span class="msk-txt">2016-10-23期</span>
 
-
-                                                <em class="cover ico_2 cf"></em>
-
-                        <span class="v-bg"></span>
-
-                                                <span class="v-ico v-show"></span><!--v-show代表有播放 -->
-                        <i class="v-ico2"></i>
-                                                <span class="s_seen"></span>
-                        <i class="ico_seen"></i>
-                    </p>
-                    <p class="ui-txt">
-                        <span class="main-tt">往事</span>
-                    </p>
-                </a>
-            </li>
+     <!--/END 简要信息-->
+                <div class="s4 introduction"style="display:block;">
+                    <h2>蛇女解密简介</h2>
+                    <div class="cont"><!--展开时给该div添加class: on ；折叠时去掉class: on -->
+                        <p>重庆渝北区统景镇胜利村的捕蛇奇人农家女晏华是远近闻名的捕蛇能手，有着一手捉蛇如抠黄蟮、毒蛇咬手脸不变色手不肿的绝活。记者专程前往统景山区亲眼目睹了这位与蛇打交道的奇人，其十多年练就的捕蛇本领让人佩服和惊叹。</p>
+                    </div>
+                </div>

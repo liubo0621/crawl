@@ -42,14 +42,25 @@ def getInfo(html,regexs, allowRepeat = False):
 
     return allowRepeat and infos or list(set(infos))
 
+##################################################
+def replaceStr(sourceStr, regex, replaceStr = ''):
+    '''
+    @summary: 替换字符串
+    ---------
+    @param sourceStr: 原字符串
+    @param regex: 正则
+    @param replaceStr: 用什么来替换 默认为''
+    ---------
+    @result: 返回替换后的字符串
+    '''
+    strinfo = re.compile(regex)
+    return strinfo.sub(replaceStr, sourceStr)
 
 ##################################################
 def getConfValue(section, key):
     cf = configparser.ConfigParser()
     cf.read("../crawl.conf")
     return cf.get(section, key)
-
-##################################################
 
 #################时间转换相关####################
 def timeListToString(timeList):
