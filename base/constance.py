@@ -8,7 +8,8 @@ EXECPTION      = '3'
 
 # 网站
 YOUKU          = 'youku.com'
-TENCENT		   = 'v.qq.com'
+TENCENT        = 'v.qq.com'
+CCTV           = 'cctv.com'
 WANG_YI        = '163.com'
 PPTV           = 'pptv.com'
 KAN_KAN        = 'kankan.com'

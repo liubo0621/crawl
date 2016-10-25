@@ -8,8 +8,7 @@ from utils.log import log
 MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
 
-FILE = "D:\\kankan.csv"
-WEBSITE = "响巢看看"
+WEBSITE = "PPTV聚力"
 
 class MongoDB():
     def __init__(self, db = '', host = MONGO_HOST, port = MONGO_PORT):

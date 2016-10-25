@@ -3,6 +3,7 @@ import sys
 sys.path.append("..")
 
 import threading
+import fileinput
 import base.constance as Constance
 import utils.tools as tools
 from utils.log import log
@@ -20,7 +21,9 @@ class AddRootUrl(threading.Thread):
             self.addTencentUrl()
             self.addWangYiUrl()
             self.addPPTVUrl()
+            self.addCCTVUrl()
             self.addKanKanUrl()
+
         elif website == Constance.YOUKU:
             self.addYoukuUrl()
         elif website == Constance.TENCENT:
@@ -29,6 +32,8 @@ class AddRootUrl(threading.Thread):
             self.addWangYiUrl()
         elif website == Constance.PPTV:
             self.addPPTVUrl()
+        elif website == Constance.CCTV:
+            self.addCCTVUrl()
         elif website == Constance.KAN_KAN:
             self.addKanKanUrl()
 
@@ -135,6 +140,20 @@ class AddRootUrl(threading.Thread):
         for i in range(1, pageCount + 1):
             url = baseUrl%i
             log.debug("pptv base url = %s"%url)
+            self.addUrl(url, websiteId)
+
+    def addCCTVUrl(self):
+        urlsList = []
+        filepath = '..\cctv.conf'
+        for line in fileinput.input(filepath):
+            url = tools.getInfo(line, '= (.+?)\n')
+            if url:
+                urlsList.extend(url)
+
+        websiteId = tools.getWebsiteId(Constance.CCTV)
+
+        for url in urlsList:
+            log.debug("Add url %s to DB"%url)
             self.addUrl(url, websiteId)
 
     def addKanKanUrl(self):

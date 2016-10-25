@@ -41,4 +41,5 @@ class  PaserControl(threading.Thread):
             pptv.parseUrl(urlInfo)
         elif domain == Constance.KAN_KAN:
             kankan.parseUrl(urlInfo)
-
+        elif domain == Constance.CCTV:
+            cctv.parseUrl(urlInfo)

@@ -16,16 +16,16 @@ TENCENT_VIDEO_INFO     = 1
 regularList = ['player_title">(.+?)\s*<', '专辑总数据.+共([\d]+)', 'itemprop="description" content="(.+?)">?', 'total_count">总播放量.+?>(.+?)</em>', '<span class="figure_info">(.+?)</span>', '', 'meta itemprop="datePublished" content="(.+?)"', '']
 
 def parseUrl(urlInfo):
-	log.debug('处理 %s'%urlInfo)
+    log.debug('处理 %s'%urlInfo)
 
-	url = urlInfo['url']
-	depth = urlInfo['depth']
-	websiteId = urlInfo['website_id']
+    url = urlInfo['url']
+    depth = urlInfo['depth']
+    websiteId = urlInfo['website_id']
 
-	if depth == TENCENT_VIDEO_URL:
-		parseRootUrl(url, websiteId, depth)
-	elif depth == TENCENT_VIDEO_INFO:
-		parseLeafUrl(url, websiteId)
+    if depth == TENCENT_VIDEO_URL:
+        parseRootUrl(url, websiteId, depth)
+    elif depth == TENCENT_VIDEO_INFO:
+        parseLeafUrl(url, websiteId)
 
 def parseRootUrl(sourceUrl, websiteId, depth):
     #html = tools.getHtml(sourceUrl)
@@ -53,9 +53,8 @@ def parseLeafUrl(sourceUrl, websiteId):
     for i in regularList:
         albumInfo.append(tools.getInfo(html, i, True))
 
+    albumInfo.append(sourceUrl)
     # 分集时间求出总时间 单位：s
     albumInfo[4] = tools.timeListToString(albumInfo[4])
-
     basePaser.addDocumentaryList(websiteId, albumInfo)
-
     basePaser.updateUrl(sourceUrl, Constance.DONE)
