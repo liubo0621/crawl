@@ -5,49 +5,29 @@ http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsit
 
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=2&sortDesc=quality
 
+http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=300&sortDesc=quality
 
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=3&sortDesc=quality
+BBC
+http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=1760&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
+http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=397&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
 
-片名： "title":"猎奇笔记",
-集数："updateInfo":"更新至73集"
+http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key=
+http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=4&sort=2&key=
+http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=5&sort=2&key=
+http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=2&sort=2&key=
+标题
+  "title":"揭秘喜剧票房王徐峥最狠的一面",
+发布时间
+ "pubDate":"2015-10-30",
+播放次数
+  "playTimes":32763,
+时长
+ "totalTimeStr":"16:11",
+--------
+拼url
+url : http://www.tudou.com/programs/view/VtHJyTZsDXI/
+"code":"VtHJyTZsDXI",
 
-简介：
-<meta name="description" content="雷史我聊 《雷史我聊》是一档奇葩的网络历史节目，准确的说是奇葩的雷史调侃节目。专门调侃天南海北，古今中外那些不为人知，尘封已久的历史故事以及人所周知却另有蹊跷的历史真相。只有你想不到，没有我雷不倒！ 纪实"/>
-
-<p class="desc">《雷史我聊》是一档奇葩的网络历史节目，准确的说是奇葩的雷史调侃节目。专门调侃天南海北，古今中外那些不为人知，尘封已久的历史故事以及人所周知却另有蹊跷的历史真相。只有你想不到，没有我雷不倒！</p>
-
-
-播放量：
-
-http://www.tudou.com/crp/itemSum.action?jsoncallback=page_play_model_itemSumModel__find&app=8&showArea=true&iabcdefg=133015059&uabcdefg=0&juabcdefg=01auraemub2qj4
-http://www.tudou.com/crp/itemSum.action?jsoncallback=page_play_model_itemSumModel__find&app=8&showArea=true&iabcdefg=132888768&uabcdefg=0&juabcdefg=01auraemub2qj4
-
-源代码中 ,iid: 132888768
-
-url： "playUrl":"http://www.tudou.com/albumplay/6I0flZRc06o.html",
-
-{
-            "albumId":247836,
-            "alias":"",
-            "title":"猎奇笔记",
-            "playtimes":513690,
-            "actors":[
-
-            ],
-            "itemTitle":"探索未知的神秘事件",
-            "reputation":0,
-            "hdType":3,
-            "playUrl":"http://www.tudou.com/albumplay/6I0flZRc06o.html",
-            "albumShortDesc":"探索未知的神秘事件",
-            "needMoney":false,
-            "aid":298802,
-            "picUrl_200x112":"http://r4.ykimg.com/0542010157FF6908641DA51C5866248C",
-            "picUrl_200x300":"http://u1.tdimg.com/8/95/93/_3490204383959077149000807416261645108.jpg",
-            "picUrl_448x252":"http://r4.ykimg.com/0542010157FF6908641DA51C5866248C",
-            "picUrl_448x672":"http://r3.ykimg.com/050E0000555EC5FD67BC3C7A470BCFF7",
-            "channelId":0,
-            "isSerial":0,
-            "payInfo":null,
-            "updateInfo":"更新至73集"
-        },
-
+进入url  取简介
+简介
+<p class="v_desc"><span>简介：</span>实拍民警突击扫黄 嫖客吓坏忙穿裤子躲藏</p>

@@ -23,6 +23,7 @@ class AddRootUrl(threading.Thread):
             self.addPPTVUrl()
             self.addCCTVUrl()
             self.addKanKanUrl()
+            self.addTouDouUrl()
 
         elif website == Constance.YOUKU:
             self.addYoukuUrl()
@@ -36,6 +37,9 @@ class AddRootUrl(threading.Thread):
             self.addCCTVUrl()
         elif website == Constance.KAN_KAN:
             self.addKanKanUrl()
+        elif website == Constance.TUDOU:
+            self.addTouDouUrl()
+
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
         for i in db.urls.find({'url':url}):
@@ -144,7 +148,7 @@ class AddRootUrl(threading.Thread):
 
     def addCCTVUrl(self):
         urlsList = []
-        filepath = '..\cctv.conf'
+        filepath = '..\\urls\\cctv.conf'
         for line in fileinput.input(filepath):
             url = tools.getInfo(line, '= (.+?)\n')
             if url:
@@ -197,3 +201,16 @@ class AddRootUrl(threading.Thread):
                 url = typeBaseUrl + 'page%d/'%i
                 log.debug("kankan type base url = %s"%url)
                 self.addUrl(url, websiteId)
+
+    def addTouDouUrl(self):
+        # 全部 剧集
+        # 添加首页 后续页面在tudou里添加
+        # baseUrl = 'http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality'
+        # websiteId = tools.getWebsiteId(Constance.TUDOU)
+        # self.addUrl(baseUrl, websiteId, Constance.EPISODE)
+
+        # 视频
+        # 添加首页 后续页面在tudou里添加
+        baseUrl = 'http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
+        websiteId = tools.getWebsiteId(Constance.TUDOU)
+        self.addUrl(baseUrl, websiteId, Constance.VIDEO)

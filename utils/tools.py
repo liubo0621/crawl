@@ -2,6 +2,7 @@
 from urllib import request
 import re
 import pymongo
+import json
 import configparser #读配置文件的
 from urllib.parse import quote
 import sys
@@ -41,6 +42,19 @@ def getInfo(html,regexs, allowRepeat = False):
             break
 
     return allowRepeat and infos or list(set(infos))
+
+##################################################
+def getJson(jsonStr):
+    '''
+    @summary: 取json对象
+    ---------
+    @param jsonStr: json格式的字符串
+    ---------
+    @result: 返回json对象
+    '''
+
+    return json.loads(jsonStr)
+
 
 ##################################################
 def replaceStr(sourceStr, regex, replaceStr = ''):

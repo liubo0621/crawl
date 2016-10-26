@@ -75,17 +75,26 @@ def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum =
         'cyclopedia_msg':cyclopediaMsg
         }
 
-    # for doc in db.documentary.find(aocumentaryDict):
-    #     return
-
-    # aocumentaryDict['play_num']= playNum
-
     # 查找数据库，根据url和websiteid看是否有相同的纪录片，若有，则比较纪录片信息，将信息更全的纪录片更新到数据库中
     for doc in db.documentary.find({'website_id':websiteId, 'url':url}, {'_id':0}):
+        isDiffent = False
+        warning = '\n' + '-' * 50 + '\n'
         for key, value in doc.items():
             if len(str(doc[key])) < len(str(aocumentaryDict[key])):
+                isDiffent = True
+                warning = warning + '更新 old %s: %s\n     new %s: %s\n'%(key, doc[key], key, aocumentaryDict[key])
                 doc[key] = aocumentaryDict[key]
-        db.documentary.update({'website_id':websiteId, 'url':url}, {'$set':doc})
+
+            else:
+                warning = warning + '留守 old %s: %s\n     new %s: %s\n'%(key, doc[key], key, aocumentaryDict[key])
+
+        if isDiffent:
+            warning = '已存在：\n' + warning + '-' * 50
+            log.warning(warning)
+
+            db.documentary.update({'website_id':websiteId, 'url':url}, {'$set':doc})
+        else:
+            log.warning('已存在url:  ' + url)
         return
 
     db.documentary.save(aocumentaryDict)

@@ -9,7 +9,7 @@ projectPath = currentPath[:currentPath.find(projectName) + 5]
 logging.basicConfig(level=logging.DEBUG,
     format='%(thread)d %(threadName)s %(asctime)s %(filename)s %(funcName)s [line:%(lineno)d] %(levelname)s %(message)s',
     datefmt='%Y-%b-%d %H:%M:%S',
-    filename=os.path.abspath('..')+'\\%s.log'%projectName,
+    filename=projectPath+'\\log\\%s.log'%projectName,
     filemode='w')
 
 console = logging.StreamHandler()
