@@ -19,6 +19,9 @@ EPISODE_INFO     = 2
 VIDEO_JSON       = 0
 VIDEO_URL        = 1
 
+ITERM_JSON       = 0
+ITERM_URL        = 1
+
 #外部传进url
 def parseUrl(urlInfo):
     log.debug('处理 %s'%urlInfo)
@@ -40,6 +43,11 @@ def parseUrl(urlInfo):
             parseVideoInfo(url, websiteId)
         elif depth == VIDEO_URL:
             parseVideoAbstract(url, websiteId)
+    elif description == Constance.ITERM:
+        if   depth == ITERM_JSON:
+            parseItermInfo(url, websiteId)
+        elif depth == ITERM_URL:
+            parseItermAbstract(url, websiteId)
 
 def parseEpisodeUrl(sourceUrl, websiteId):
     log.debug('取剧集url %s'%sourceUrl)
@@ -66,7 +74,7 @@ def parseEpisodeUrl(sourceUrl, websiteId):
         nextPageUrl = sourceUrl.replace('pageNo=%s'%currentPage, 'pageNo=%d'%nextPage)
         log.debug('nextPageUrl = %s'%nextPageUrl)
         # 添加到urls表 depth为0
-        addUrl(nextPageUrl, websiteId, EPISODE_URL, Constance.EPISODE)
+        basePaser.addUrl(nextPageUrl, websiteId, EPISODE_URL, Constance.EPISODE)
 
 #取剧集简介url
 def parseEpisodeDescribeUrl(sourceUrl, websiteId):
@@ -148,7 +156,7 @@ def parseVideoInfo(sourceUrl, websiteId):
         nextPageUrl = sourceUrl.replace('page=%s'%currentPage, 'page=%d'%nextPage)
         log.debug('nextPageUrl = %s'%nextPageUrl)
         # 添加到urls表 depth为0
-        addUrl(nextPageUrl, websiteId, VIDEO_JSON, Constance.VIDEO)
+        basePaser.addUrl(nextPageUrl, websiteId, VIDEO_JSON, Constance.VIDEO)
 
     # 解析当前页的信息
     for info in jsonArray:
@@ -167,7 +175,7 @@ def parseVideoInfo(sourceUrl, websiteId):
         # abstract = len(abstract) > 0 and abstract[0] or ''
         # # abstract = tools.replaceStr(abstract, '<.*?>')
         # log.debug('简介: %s\n'%abstract)
-        addUrl(url, websiteId, VIDEO_URL, Constance.VIDEO)
+        basePaser.addUrl(url, websiteId, VIDEO_URL, Constance.VIDEO)
         basePaser.addDocumentary(websiteId, title, '', url, '', playTimes, totalTimeStr, pubDate)
 
     basePaser.updateUrl(sourceUrl, Constance.DONE)
@@ -190,5 +198,56 @@ def parseVideoAbstract(sourceUrl, websiteId):
     basePaser.updateUrl(sourceUrl, Constance.DONE)
 
 
-# sourceUrl = 'http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
-# parseVideoInfo(sourceUrl, '')
+def parseItermInfo(sourceUrl, websiteId):
+    print(websiteId)
+    log.debug('解析栏目信息 %s'%sourceUrl)
+
+    html = tools.getHtml(sourceUrl)
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
+    json = tools.getJson(html)
+    jsonArray = json['data']
+    # 当没有数据时（到最后一页）  jsonArray 为[]
+    #添加下一页的url
+    if jsonArray != []:
+        currentPageRegex = 'page=(\d*?)&'
+        currentPage = tools.getInfo(sourceUrl, currentPageRegex)[0]
+        nextPage = int(currentPage) + 1
+        nextPageUrl = sourceUrl.replace('page=%s'%currentPage, 'page=%d'%nextPage)
+        log.debug('nextPageUrl = %s'%nextPageUrl)
+        # 添加到urls表 depth为0
+        basePaser.addUrl(nextPageUrl, websiteId, ITERM_JSON, Constance.ITERM)
+
+    for info in jsonArray:
+        title = info['name']
+        url = info['playUrl']
+        releaseTime = info['createdTime']
+        itemsCount = str(info['itemsCount'])
+        log.debug('视频：%s 发布时间：%s 集数：%s url: %s'%(title, releaseTime, itemsCount, url))
+
+        basePaser.addUrl(url, websiteId, ITERM_URL, Constance.ITERM)
+        basePaser.addDocumentary(websiteId, title, '', url, itemsCount, '', '', releaseTime)
+
+    basePaser.updateUrl(sourceUrl, Constance.DONE)
+
+def parseItermAbstract(sourceUrl, websiteId):
+    # 进入url  取简介
+    html = tools.getHtml(sourceUrl)
+    html = tools.getHtml(sourceUrl)
+    if html == None:
+        basePaser.updateUrl(sourceUrl, Constance.TODO)
+        return
+
+    regex = '<span class="desc">(.*?)</span>'
+    abstract = tools.getInfo(html, regex)
+    abstract = len(abstract) > 0 and abstract[0] or ''
+    # abstract = tools.replaceStr(abstract, '<.*?>')
+    log.debug('url: %s\n简介: %s\n'%(sourceUrl, abstract))
+
+    basePaser.addDocumentary(websiteId, '', abstract, sourceUrl)
+    basePaser.updateUrl(sourceUrl, Constance.DONE)
+
+# sourceUrl = 'http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
+# parseItermInfo(sourceUrl, '')

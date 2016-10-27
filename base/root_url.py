@@ -205,12 +205,18 @@ class AddRootUrl(threading.Thread):
     def addTouDouUrl(self):
         # 全部 剧集
         # 添加首页 后续页面在tudou里添加
-        # baseUrl = 'http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality'
-        # websiteId = tools.getWebsiteId(Constance.TUDOU)
-        # self.addUrl(baseUrl, websiteId, Constance.EPISODE)
+        baseUrl = 'http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality'
+        websiteId = tools.getWebsiteId(Constance.TUDOU)
+        self.addUrl(baseUrl, websiteId, Constance.EPISODE)
 
         # 视频
         # 添加首页 后续页面在tudou里添加
         baseUrl = 'http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
         websiteId = tools.getWebsiteId(Constance.TUDOU)
         self.addUrl(baseUrl, websiteId, Constance.VIDEO)
+
+        # 栏目
+        # 添加首页 后续页面在tudou里添加
+        baseUrl = 'http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
+        websiteId = tools.getWebsiteId(Constance.TUDOU)
+        self.addUrl(baseUrl, websiteId, Constance.ITERM)

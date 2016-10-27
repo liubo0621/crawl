@@ -11,6 +11,7 @@ BBC
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=1760&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
 http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=397&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
 
+视频
 http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key=
 http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=4&sort=2&key=
 http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=5&sort=2&key=
@@ -31,3 +32,42 @@ url : http://www.tudou.com/programs/view/VtHJyTZsDXI/
 进入url  取简介
 简介
 <p class="v_desc"><span>简介：</span>实拍民警突击扫黄 嫖客吓坏忙穿裤子躲藏</p>
+
+栏目
+http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=3&sort=2&key=
+http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key=
+http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=14&sort=2&key=
+
+名称
+"name":"雷史我聊"
+播放次数 错误
+"playTimes":0,
+发布时间
+"createdTime":"2015-05-19",
+url
+"playUrl":"http://www.tudou.com/listplay/SB0UXjDvn2k.html",
+集数
+ "itemsCount":71,
+
+进url取：
+简介：
+<span class="name">简介：</span>
+                                                      <span class="desc">脱光隨你看
+      中新网1月15日电 据澳洲网报道，探索频道继《荒野求生》之后于2013年初推出新版电视真人秀节目《裸体求生》(Naked and Afraid)，该节目要求一对异性参与者赤裸身体，深入蛮荒丛林，在那里不依靠任何现代工具和日常用品生活21天。澳洲女子菲尔诺报名参加了该节目，近日她向媒体讲述了自己的亲身感受——“无法想象的折磨”。
+
+
+
+深入蛮荒 21天提心吊胆
+
+菲尔诺与其异性搭档的求生地点是美国路易斯安那州的湿地，在那里，菲尔诺的脚被扎了许多小洞，后来伤口不幸感染。
+
+虽然距离节目的录制已经过去7个月，但是在菲尔诺的身上依然留下了许多面积较大的伤疤。她还患上了战壕足病。
+
+菲尔诺称，“湿地的水下有很多荆棘，扎进我们的脚底，然后伤口感染，因为21天的时间里我们一直都站在潮湿肮脏的水里，所以伤口一直都没有愈合。”
+
+饥寒交迫 喝脏水吃不饱
+
+赤身裸体，身处荒野，寒冷是肯定的。菲尔诺与他的异性同伴波伯吉尔要喝煮沸的沼泽水，这些水常常来自于他们小便的地方。他们会一连几天挨饿，只有靠偶尔捕到的蛇肉充饥，但也只是杯水车薪。只有一次他们足够幸运，吃到了一只体型很大的海狸鼠。
+
+节目录制期间，他们的庇护所和火种至少4次.....</span>
+
