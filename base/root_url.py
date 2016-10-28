@@ -25,6 +25,7 @@ class AddRootUrl(threading.Thread):
             self.addKanKanUrl()
             self.addTouDouUrl()
             self.addV1Url()
+            self.addKu6Url()
 
         elif website == Constance.YOUKU:
             self.addYoukuUrl()
@@ -42,6 +43,8 @@ class AddRootUrl(threading.Thread):
             self.addTouDouUrl()
         elif website == Constance.V1:
             self.addV1Url()
+        elif website == Constance.KU6:
+            self.addKu6Url()
 
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
@@ -229,3 +232,32 @@ class AddRootUrl(threading.Thread):
         baseUrl = 'http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=1&nums=24&_=1477619416282'
         websiteId = tools.getWebsiteId(Constance.V1)
         self.addUrl(baseUrl, websiteId)
+
+    def addKu6Url(self):
+        websiteId = tools.getWebsiteId(Constance.KU6)
+        urlDict = {
+            # 视频 最多播放 今日
+            'http://top.ku6.com/v_t1d1c126000p%d.html' : 15,
+            # 视频 最多播放 本周
+            'http://top.ku6.com/v_t1d2c126000p%d.html' : 15,
+            # 视频 最多播放 本月
+            'http://top.ku6.com/v_t1d3c126000p%d.html' : 15,
+            # 视频 最新推荐
+            'http://top.ku6.com/v_t7d4c126000p%d.html' : 30,
+
+            # 专辑 最多播放 今日
+            'http://top.ku6.com/p_t1d1c126000p%d.html' : 1,
+            # 专辑 最多播放 本周
+            'http://top.ku6.com/p_t1d2c126000p%d.html' : 1,
+            # 专辑 最多播放 本月
+            'http://top.ku6.com/p_t1d3c126000p%d.html' : 15,
+            # 专辑 最新推荐
+            'http://top.ku6.com/p_t2d4c126000p%d.html' : 30
+
+        }
+
+        for baseUrl, pageCount in urlDict.items():
+            for i in range(1, pageCount + 1):
+                url = baseUrl%i
+                log.debug("ku6 base url = %s"%url)
+                self.addUrl(url, websiteId)

@@ -1,79 +1,18 @@
-第一视频
-http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=1&nums=24&_=1477619416282
-http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=2&nums=24&_=1477619416282
-http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=3&nums=24&_=1477619474223
-http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=4&nums=24&_=1477619608872
+酷六】
 
+url
 
-json
+名称
 
-视频url
-"url":"http://www.v1.cn/2015-03-23/1669008.shtml",
-
-url = http:\\/\\/www.v1.cn\\/2015-05-05\\/1755997.shtml
-实际
-http://www.v1.cn///2015-05-05///1755997.shtml
-
-片名
-"title":"20150322《走遍中国》：难以破解的奇怪物证",
+播放量
 
 发布时间
- "create_time":"2015-03-23 13:15:01",
-
-播出机构
-"source":"央视国际",
 
 简介
-    "intro":"20150322《走遍中国》：难以破解的奇怪物证",
 
 时长
-   "duration":"1434",
+<span class="time">02:53</span>
 
-播放次数
-   "pv":"555",
+<dl><dt><span class="time">02:53</span><a href="#-Wo3fCioDKd9FmlxrctILQ.." title="加入点播单" onclick="QuickList.toggle(event)" class="plus"></a><span><a href="http://v.ku6.com/show/-Wo3fCioDKd9FmlxrctILQ...html" title="【看鉴】100秒看清古代女性内衣的变化【看完这100秒】-24" target="show_v"><img src="http://vi1.ku6img.com/data2/p11/ku6video/2016/9/7/10/1478865010575_173548204_173548204/8.jpg" alt="【看鉴】100秒看清古代女性内衣的变化【看完这100秒】-24"></a></span><a href="http://v.ku6.com/show/-Wo3fCioDKd9FmlxrctILQ...html" title="【看鉴】100秒看清古代女性内衣的变化【看完这100秒】-24" target="show_v">【看鉴】100秒看清古代女性内衣的变化【看完这100秒】-24</a></dt><dd>播客：<a href="http://v.ku6.com/u/25882069" target="_blank">185****2825</a></dd><dd>播放：2323</dd><dd>评论：0</dd><dd>发布：1月前</dd></dl>
 
-{
-    "aid":"1669163",
-    "title":"20150322《人文地理》：远逝的僰人（2）——无字天书",
-    "url":"http://www.v1.cn/2015-03-23/1669163.shtml",
-    "image":"http://p01.v1.cn/group1/M00/1B/F5/ChQBFVUPpYOAa8XeBlUtobD-kAI797-s.jpg",
-    "intro":"20150322《人文地理》：远逝的僰人（2）——无字天书",
-    "author":"第一视频",
-    "columnName":"人文地理",
-    "create_time":"2015-03-23 13:33:04",
-    "postdate":"2015-03-23 13:33:04",
-    "cid":"1147",
-    "level":"3",
-    "template":"1000",
-    "islink":"0",
-    "source":"央视纪录",
-    "category":"纪录片",
-    "categoryPY":"www",
-    "pid":"1671",
-    "pname":"新闻",
-    "tagArray":[
-        "僰人",
-        "蛙舞",
-        "宜宾市历史学会会长",
-        "屈川",
-        "青蛙",
-        "阿旦沐",
-        "悬棺",
-        "岩画",
-        "珙县麻塘坝",
-        "美国学者",
-        "葛维汉",
-        "民族史学家",
-        "石钟健",
-        "四川省文物考古"
-    ],
-    "tag":"僰人 蛙舞 宜宾市历史学会会长 屈川 青蛙 阿旦沐 悬棺 岩画 珙县麻塘坝 美国学者 葛维汉 民族史学家 石钟健 四川省文物考古",
-    "vid":"1699566",
-    "pvid":"0",
-    "videoLink":"http://f01.v1.cn/group1/M00/1B/F5/ChQBFVUPpYOAa8XeBlUtobD-kAI797.flv",
-    "duration":"1329",
-    "support":0,
-    "oppose":0,
-    "pv":"555",
-    "comment":0
-}
+<dl><dt><span class="time">38:10</span><a href="#j05kZHjPAQ96b_BlorLWXw.." title="加入点播单" onclick="QuickList.toggle(event)" class="plus"></a><span><a href="http://v.ku6.com/show/j05kZHjPAQ96b_BlorLWXw...html" title="狮子和老虎打架谁厉害 动物世界&amp;" target="show_v"><img src="http://vi1.ku6img.com/data2/p2/ku6video/2013/7/16/6/1379178481815_68381122_68381122/7.jpg" alt="狮子和老虎打架谁厉害 动物世界&amp;"></a></span><a href="http://v.ku6.com/show/j05kZHjPAQ96b_BlorLWXw...html" title="狮子和老虎打架谁厉害 动物世界&amp;" target="show_v">狮子和老虎打架谁厉害 动物世界&amp;</a></dt><dd>播客：<a href="http://v.ku6.com/xxxoxxx" target="_blank">騳虤</a></dd><dd>播放：888</dd><dd>评论：87</dd><dd>发布：3年前</dd></dl>

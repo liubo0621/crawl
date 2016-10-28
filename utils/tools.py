@@ -9,7 +9,6 @@ import sys
 sys.path.append("..")
 from utils.log import log
 
-
 def getHtml(url, code = 'utf-8'):
     html = None
     try:
@@ -89,6 +88,7 @@ def timeToString(time):
         return int(timeList[0]) * 3600 + int(timeList[1]) * 60 + int(timeList[2])
     elif len(timeList) == 2:
         return int(timeList[0]) * 60 + int(timeList[1])
+    else: return 0
 
 ##################################################
 class DB():

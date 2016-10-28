@@ -6,4 +6,5 @@ __all__ = [
     "kankan",
     "tudou",
     "v1",
+    "ku6",
  ]

@@ -47,3 +47,5 @@ class  PaserControl(threading.Thread):
             tudou.parseUrl(urlInfo)
         elif domain == Constance.V1:
             v1.parseUrl(urlInfo)
+        elif domain == Constance.KU6:
+            ku6.parseUrl(urlInfo)

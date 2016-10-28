@@ -15,6 +15,7 @@ PPTV           = 'pptv.com'
 KAN_KAN        = 'kankan.com'
 TUDOU          = 'tudou.com'
 V1             = 'v1.cn'  #第一视频
+KU6            = 'ku6.com'
 
 #正则类型
 DOC_NAME       = 'doc_name'
