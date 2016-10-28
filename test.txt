@@ -1,73 +1,79 @@
-土豆：
+第一视频
+http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=1&nums=24&_=1477619416282
+http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=2&nums=24&_=1477619416282
+http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=3&nums=24&_=1477619474223
+http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=4&nums=24&_=1477619608872
 
-剧集：
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
 
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=2&sortDesc=quality
+json
 
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=300&sortDesc=quality
+视频url
+"url":"http://www.v1.cn/2015-03-23/1669008.shtml",
 
-BBC
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=1760&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
-http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tags=397&tagType=3&firstTagId=8&areaCode=&initials=&hotSingerId=&pageNo=1&sortDesc=quality
+url = http:\\/\\/www.v1.cn\\/2015-05-05\\/1755997.shtml
+实际
+http://www.v1.cn///2015-05-05///1755997.shtml
 
-视频
-http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key=
-http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=4&sort=2&key=
-http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=5&sort=2&key=
-http://www.tudou.com/list/itemData.action?tagType=1&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=2&sort=2&key=
-标题
-  "title":"揭秘喜剧票房王徐峥最狠的一面",
+片名
+"title":"20150322《走遍中国》：难以破解的奇怪物证",
+
 发布时间
- "pubDate":"2015-10-30",
-播放次数
-  "playTimes":32763,
-时长
- "totalTimeStr":"16:11",
---------
-拼url
-url : http://www.tudou.com/programs/view/VtHJyTZsDXI/
-"code":"VtHJyTZsDXI",
+ "create_time":"2015-03-23 13:15:01",
 
-进入url  取简介
+播出机构
+"source":"央视国际",
+
 简介
-<p class="v_desc"><span>简介：</span>实拍民警突击扫黄 嫖客吓坏忙穿裤子躲藏</p>
+    "intro":"20150322《走遍中国》：难以破解的奇怪物证",
 
-栏目
-http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=3&sort=2&key=
-http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key=
-http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=14&sort=2&key=
+时长
+   "duration":"1434",
 
-名称
-"name":"雷史我聊"
-播放次数 错误
-"playTimes":0,
-发布时间
-"createdTime":"2015-05-19",
-url
-"playUrl":"http://www.tudou.com/listplay/SB0UXjDvn2k.html",
-集数
- "itemsCount":71,
+播放次数
+   "pv":"555",
 
-进url取：
-简介：
-<span class="name">简介：</span>
-                                                      <span class="desc">脱光隨你看
-      中新网1月15日电 据澳洲网报道，探索频道继《荒野求生》之后于2013年初推出新版电视真人秀节目《裸体求生》(Naked and Afraid)，该节目要求一对异性参与者赤裸身体，深入蛮荒丛林，在那里不依靠任何现代工具和日常用品生活21天。澳洲女子菲尔诺报名参加了该节目，近日她向媒体讲述了自己的亲身感受——“无法想象的折磨”。
-
-
-
-深入蛮荒 21天提心吊胆
-
-菲尔诺与其异性搭档的求生地点是美国路易斯安那州的湿地，在那里，菲尔诺的脚被扎了许多小洞，后来伤口不幸感染。
-
-虽然距离节目的录制已经过去7个月，但是在菲尔诺的身上依然留下了许多面积较大的伤疤。她还患上了战壕足病。
-
-菲尔诺称，“湿地的水下有很多荆棘，扎进我们的脚底，然后伤口感染，因为21天的时间里我们一直都站在潮湿肮脏的水里，所以伤口一直都没有愈合。”
-
-饥寒交迫 喝脏水吃不饱
-
-赤身裸体，身处荒野，寒冷是肯定的。菲尔诺与他的异性同伴波伯吉尔要喝煮沸的沼泽水，这些水常常来自于他们小便的地方。他们会一连几天挨饿，只有靠偶尔捕到的蛇肉充饥，但也只是杯水车薪。只有一次他们足够幸运，吃到了一只体型很大的海狸鼠。
-
-节目录制期间，他们的庇护所和火种至少4次.....</span>
-
+{
+    "aid":"1669163",
+    "title":"20150322《人文地理》：远逝的僰人（2）——无字天书",
+    "url":"http://www.v1.cn/2015-03-23/1669163.shtml",
+    "image":"http://p01.v1.cn/group1/M00/1B/F5/ChQBFVUPpYOAa8XeBlUtobD-kAI797-s.jpg",
+    "intro":"20150322《人文地理》：远逝的僰人（2）——无字天书",
+    "author":"第一视频",
+    "columnName":"人文地理",
+    "create_time":"2015-03-23 13:33:04",
+    "postdate":"2015-03-23 13:33:04",
+    "cid":"1147",
+    "level":"3",
+    "template":"1000",
+    "islink":"0",
+    "source":"央视纪录",
+    "category":"纪录片",
+    "categoryPY":"www",
+    "pid":"1671",
+    "pname":"新闻",
+    "tagArray":[
+        "僰人",
+        "蛙舞",
+        "宜宾市历史学会会长",
+        "屈川",
+        "青蛙",
+        "阿旦沐",
+        "悬棺",
+        "岩画",
+        "珙县麻塘坝",
+        "美国学者",
+        "葛维汉",
+        "民族史学家",
+        "石钟健",
+        "四川省文物考古"
+    ],
+    "tag":"僰人 蛙舞 宜宾市历史学会会长 屈川 青蛙 阿旦沐 悬棺 岩画 珙县麻塘坝 美国学者 葛维汉 民族史学家 石钟健 四川省文物考古",
+    "vid":"1699566",
+    "pvid":"0",
+    "videoLink":"http://f01.v1.cn/group1/M00/1B/F5/ChQBFVUPpYOAa8XeBlUtobD-kAI797.flv",
+    "duration":"1329",
+    "support":0,
+    "oppose":0,
+    "pv":"555",
+    "comment":0
+}

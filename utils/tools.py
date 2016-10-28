@@ -67,8 +67,8 @@ def replaceStr(sourceStr, regex, replaceStr = ''):
     ---------
     @result: 返回替换后的字符串
     '''
-    strinfo = re.compile(regex)
-    return strinfo.sub(replaceStr, sourceStr)
+    strInfo = re.compile(regex)
+    return strInfo.sub(replaceStr, sourceStr)
 
 ##################################################
 def getConfValue(section, key):

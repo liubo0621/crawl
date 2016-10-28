@@ -5,4 +5,5 @@ __all__ = [
     "wangyi",
     "kankan",
     "tudou",
+    "v1",
  ]

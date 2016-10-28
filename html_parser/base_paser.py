@@ -70,8 +70,8 @@ def addDocumentary(websiteId, docName, abstract, url, episodeNum = '', playNum =
         'episode_num':episodeNum,
         'play_num':playNum,
         'total_length':totalLength,
-        'institutions':institutions,
         'release_time':releaseTime,
+        'institutions':institutions,
         'cyclopedia_msg':cyclopediaMsg
         }
 

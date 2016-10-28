@@ -45,3 +45,5 @@ class  PaserControl(threading.Thread):
             cctv.parseUrl(urlInfo)
         elif domain == Constance.TUDOU:
             tudou.parseUrl(urlInfo)
+        elif domain == Constance.V1:
+            v1.parseUrl(urlInfo)

@@ -24,6 +24,7 @@ class AddRootUrl(threading.Thread):
             self.addCCTVUrl()
             self.addKanKanUrl()
             self.addTouDouUrl()
+            self.addV1Url()
 
         elif website == Constance.YOUKU:
             self.addYoukuUrl()
@@ -39,6 +40,8 @@ class AddRootUrl(threading.Thread):
             self.addKanKanUrl()
         elif website == Constance.TUDOU:
             self.addTouDouUrl()
+        elif website == Constance.V1:
+            self.addV1Url()
 
 
     def addUrl(self, url, websiteId, description = '', depth = 0, status = Constance.TODO):
@@ -220,3 +223,9 @@ class AddRootUrl(threading.Thread):
         baseUrl = 'http://www.tudou.com/list/playlistData.action?tagType=2&firstTagId=8&areaCode=&tags=&initials=&hotSingerId=&page=1&sort=2&key='
         websiteId = tools.getWebsiteId(Constance.TUDOU)
         self.addUrl(baseUrl, websiteId, Constance.ITERM)
+
+    def addV1Url(self):
+        # 添加首页 后续页面在tudou里添加
+        baseUrl = 'http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=1&nums=24&_=1477619416282'
+        websiteId = tools.getWebsiteId(Constance.V1)
+        self.addUrl(baseUrl, websiteId)
