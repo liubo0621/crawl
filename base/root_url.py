@@ -228,7 +228,7 @@ class AddRootUrl(threading.Thread):
         self.addUrl(baseUrl, websiteId, Constance.ITERM)
 
     def addV1Url(self):
-        # 添加首页 后续页面在tudou里添加
+        # 添加首页 后续页面在v1里添加
         baseUrl = 'http://api.v1.cn/v1Enhanced/interfaceForJsonP?callback=jQuery18308286485691806487_1477619118750&obj=cms.getArticle&cid=1147&page=1&nums=24&_=1477619416282'
         websiteId = tools.getWebsiteId(Constance.V1)
         self.addUrl(baseUrl, websiteId)

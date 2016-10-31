@@ -49,7 +49,7 @@ def parseLeafUrl(sourceUrl, websiteId):
         time.sleep(2)
         html = driver.page_source
     finally:
-        driver.close()
+        driver.quit()
 
     #html = tools.getHtml(sourceUrl)
     #h = httplib.Http(timeout=3)
